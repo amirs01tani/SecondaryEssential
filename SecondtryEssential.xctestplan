@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "7342B979-2AE1-4220-ADD6-AABDEC4B0AD4",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SecondtryEssential.xcodeproj",
+        "identifier" : "29C14E992AF3926A00470C52",
+        "name" : "SecondtryEssentialTests"
+      }
+    }
+  ],
+  "version" : 1
+}

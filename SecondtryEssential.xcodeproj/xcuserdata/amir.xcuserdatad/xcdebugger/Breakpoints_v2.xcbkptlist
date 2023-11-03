@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AC49ACA2-4B75-4715-A114-20D692C88B4D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EF687D8-30B3-48FA-8C9F-5BB6E1114EE1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecondtryEssentialTests/FeedItemLoaderTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "test_init_requestDataFromURL()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79DB36C0-2521-4FF4-B96A-57629BAE9E22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecondtryEssentialTests/FeedItemLoaderTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "test_init_requestDataFromURL()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA70AD20-4889-4228-8A90-E60153779B8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SecondtryEssentialTests/FeedItemLoaderTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "test_init_doesNotRequestDataFromURL()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CA70AD20-4889-4228-8A90-E60153779B8C - 8d5dbe83148860dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecondtryEssentialTests.FeedItemLoaderTests.test_init_doesNotRequestDataFromURL() -&gt; ()"
+                  moduleName = "SecondtryEssentialTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amir/Documents/SecondtryEssential/SecondtryEssentialTests/FeedItemLoaderTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "CA70AD20-4889-4228-8A90-E60153779B8C - 8d5dbe83148860dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SecondtryEssentialTests.FeedItemLoaderTests.test_init_doesNotRequestDataFromURL() -&gt; ()"
+                  moduleName = "SecondtryEssentialTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amir/Documents/SecondtryEssential/SecondtryEssentialTests/FeedItemLoaderTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "224">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
