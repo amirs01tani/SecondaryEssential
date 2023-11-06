@@ -20,10 +20,20 @@ class FeedItemLoaderTests: XCTestCase {
         let url = URL(string: "http://a-given-url")!
         let (sut, client) = makeSUT(url: url)
         
-        sut.load()
-        sut.load()
+        sut.load{ _ in }
+        sut.load{ _ in }
         
         XCTAssertEqual(client.requestedURL, [url, url])
+    }
+    
+    func test_load_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        client.error = NSError(domain: "Test", code: 0)
+        
+        var capturedError = [RemoteFeedLoader.Error]()
+        sut.load { capturedError.append($0) }
+        
+        XCTAssertEqual(capturedError, [.connectivity])
     }
     
     //MARK: - Helpers
@@ -35,10 +45,14 @@ class FeedItemLoaderTests: XCTestCase {
     }
     
     class HTTPClientSpy: HTTPClient {
-        func get(from URL: URL) {
+        func get(from URL: URL, completion: (Error) -> Void) {
             self.requestedURL.append(URL)
+            if let error = error {
+                completion(error)
+            }
         }
         var requestedURL = [URL]()
+        var error: Error?
     }
 
 }
