@@ -17,7 +17,7 @@ public protocol FeedLoader {
 }
 
 public protocol HTTPClient {
-    func get(from URL: URL, completion: @escaping (HTTPURLResponse?, Error?) -> Void)
+    func get(from URL: URL, completion: @escaping (Result<HTTPURLResponse, Error>) -> Void)
 }
 
 public class RemoteFeedLoader {
@@ -36,12 +36,14 @@ public class RemoteFeedLoader {
     }
     
     public func load(completion: @escaping (Error) -> Void) {
-        client.get(from: url, completion: { (response, error) in
-            if response != nil {
+        client.get(from: url, completion: { result in
+            switch result {
+            case .success:
                 completion(.invalidData)
-            } else {
+            case .failure:
                 completion(.connectivity)
             }
+            
         })
     }
     

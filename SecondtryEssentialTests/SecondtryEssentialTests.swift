@@ -41,7 +41,6 @@ class FeedItemLoaderTests: XCTestCase {
     func test_load_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
         
-        let clientError = NSError(domain: "Test", code: 0)
         let codes = [199, 201, 300, 400, 500]
         codes.enumerated().forEach({ index, code in
             var capturedError = [RemoteFeedLoader.Error]()
@@ -60,7 +59,7 @@ class FeedItemLoaderTests: XCTestCase {
     }
     
     class HTTPClientSpy: HTTPClient {
-        func get(from URL: URL, completion: @escaping (HTTPURLResponse?, Error?) -> Void) {
+        func get(from URL: URL, completion: @escaping (Result<HTTPURLResponse, Error>) -> Void) {
             self.messages.append((URL, completion))
         }
         
@@ -69,15 +68,15 @@ class FeedItemLoaderTests: XCTestCase {
         }
         
         func complete(with error: Error, at index: Int = 0) {
-            messages[index].completion(nil, error)
+            messages[index].completion(.failure(error))
         }
         
         func complete(withStatusCode code: Int, at index: Int = 0) {
             let response = HTTPURLResponse(url: requestedURLs[index], statusCode: code, httpVersion: nil, headerFields: nil)
-            messages[index].completion(response, nil)
+            messages[index].completion(.success(response!))
         }
         
-        var messages = [(url: URL, completion: (HTTPURLResponse?, Error?) -> Void)]()
+        var messages = [(url: URL, completion: (Result<HTTPURLResponse, Error>) -> Void)]()
 
     }
 
