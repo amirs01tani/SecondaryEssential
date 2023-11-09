@@ -7,8 +7,18 @@
 
 import Foundation
 
-struct FeedItem {
+public struct FeedItem: Equatable {
+    
     let id: UUID
-    let url: String
-    let location: String
+    let description: String?
+    let location: String?
+    let imageURL: String
+    
+    public init(id: UUID, description: String? = nil, location: String? = nil, imageURL: String) {
+        self.id = id
+        self.description = description
+        self.location = location
+        self.imageURL = imageURL
+    }
+    
 }
