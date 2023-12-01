@@ -60,18 +60,18 @@ final class URLProtocolTests: XCTestCase {
         let response = anyHTTPURLResponse()
         let receivedValues = resultValueFor(data: nil, response: response, error: nil)
         let emptyData = Data()
-        XCTAssertEqual(receivedValues.data, emptyData)
-        XCTAssertEqual(receivedValues.response?.url, response.url)
-        XCTAssertEqual(receivedValues.response?.statusCode, response.statusCode)
+        XCTAssertEqual(receivedValues?.data, emptyData)
+        XCTAssertEqual(receivedValues?.response.url, response.url)
+        XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
     }
     
     func test_getFromURL_succeedsOnHTTPURLResponseWithData() {
         let data = anyData()
         let response = anyHTTPURLResponse()
-        let (receivedData, receivedResponse) = resultValueFor(data: data, response: response, error: nil)
-        XCTAssertEqual(receivedData, data)
-        XCTAssertEqual(receivedResponse?.url, response.url)
-        XCTAssertEqual(receivedResponse?.statusCode, response.statusCode)
+        let receivedResult = resultValueFor(data: data, response: response, error: nil)
+        XCTAssertEqual(receivedResult?.data, data)
+        XCTAssertEqual(receivedResult?.response.url, response.url)
+        XCTAssertEqual(receivedResult?.response.statusCode, response.statusCode)
         
     }
     //MARK: -Helpers
@@ -93,43 +93,43 @@ final class URLProtocolTests: XCTestCase {
     }
     
     private func resultErrorFor(data: Data?, response: HTTPURLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> Error? {
-        URLProtocolStub.stub(data: data, response: response, error: error)
         
-        let exp = expectation(description: "Wait for completion")
-        var receivedError: Error?
-        makeSUT().get(from: anyURL()) { result in
-            switch result {
-            case let .failure(error):
-                receivedError = error
-            default:
-                XCTFail("Expect failure but received \(result) instead.")
-            }
+        let result = resultFor(data: data, response: response, error: error)
+        switch result {
+        case let .failure(error):
+            return error
+        default:
+            XCTFail("Expect failure but received \(result) instead.")
+            return nil
             
-            exp.fulfill()
         }
-        wait(for: [exp], timeout: 1)
-        return receivedError
     }
     
-    private func resultValueFor(data: Data?, response: HTTPURLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> (data: Data?, response: HTTPURLResponse?) {
+    private func resultValueFor(data: Data?, response: HTTPURLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
+        
+        let result = resultFor(data: data, response: response, error: error)
+        
+        switch result {
+        case let .success((response, data)):
+            return (data, response)
+        default:
+            XCTFail("Expected success but received \(result)")
+            return nil
+        }
+    }
+    
+    private func resultFor(data: Data?, response: HTTPURLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> (Result<(HTTPURLResponse, Data), Error>) {
         URLProtocolStub.stub(data: data, response: response, error: error)
         
         let exp = expectation(description: "Wait for completion")
-        var receivedData: Data?
-        var receivedResponse: HTTPURLResponse?
+        var receivedResult: (Result<(HTTPURLResponse, Data), Error>)!
+        
         makeSUT().get(from: anyURL()) { result in
-            switch result {
-            case let .success((response, data)):
-                receivedData = data
-                receivedResponse = response
-            default:
-                XCTFail("Expect success but received \(result) instead.")
-            }
-            
+            receivedResult = result
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
-        return (receivedData, receivedResponse)
+        return receivedResult
     }
     
     private func anyURL() -> URL {
