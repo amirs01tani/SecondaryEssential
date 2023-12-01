@@ -58,7 +58,7 @@ final class URLProtocolTests: XCTestCase {
     
     func test_getFromURL_succeedsWithEmptyDataOnHTTPURLResponseWithNilData() {
         let response = anyHTTPURLResponse()
-        let receivedValues = resultFor(data: nil, response: response, error: nil)
+        let receivedValues = resultValueFor(data: nil, response: response, error: nil)
         let emptyData = Data()
         XCTAssertEqual(receivedValues.data, emptyData)
         XCTAssertEqual(receivedValues.response?.url, response.url)
@@ -68,10 +68,10 @@ final class URLProtocolTests: XCTestCase {
     func test_getFromURL_succeedsOnHTTPURLResponseWithData() {
         let data = anyData()
         let response = anyHTTPURLResponse()
-        let (receivedData, receivedResponse) = resultFor(data: data, response: response, error: nil)
-        XCTAssertEqual (receivedData, data)
+        let (receivedData, receivedResponse) = resultValueFor(data: data, response: response, error: nil)
+        XCTAssertEqual(receivedData, data)
         XCTAssertEqual(receivedResponse?.url, response.url)
-        XCTAssertEqual (receivedResponse?.statusCode, response.statusCode)
+        XCTAssertEqual(receivedResponse?.statusCode, response.statusCode)
         
     }
     //MARK: -Helpers
@@ -111,7 +111,7 @@ final class URLProtocolTests: XCTestCase {
         return receivedError
     }
     
-    private func resultFor(data: Data?, response: HTTPURLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> (data: Data?, response: HTTPURLResponse?) {
+    private func resultValueFor(data: Data?, response: HTTPURLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> (data: Data?, response: HTTPURLResponse?) {
         URLProtocolStub.stub(data: data, response: response, error: error)
         
         let exp = expectation(description: "Wait for completion")
