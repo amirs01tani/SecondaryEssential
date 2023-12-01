@@ -7,20 +7,23 @@
 
 import Foundation
 
-public enum HTTPClientResult{
-    case success(data: Data?,response: HTTPURLResponse?)
-    case failure(error: Error?)
-}
-
-public class URLSessionHTTPClient {
-    private let session = URLSession.shared
+public class URLSessionHTTPClient: HTTPClient {
     
-    public init() {}
+    private let session: URLSession
+    public init(session: URLSession = .shared) {
+        self.session = session
+    }
+    private struct UnexpectedError: Error {}
     
-    public func get(from url: URL, completion: @escaping (HTTPClientResult)->Void) {
-        session.dataTask(with: URLRequest(url: url)) { _,_, error in
+    public func get(from URL: URL, completion: @escaping (Result<(HTTPURLResponse, Data), Error>) -> Void) {
+        
+        session.dataTask(with: URLRequest(url: URL)) { data, response, error in
             if let error = error {
-                completion(.failure(error: error))
+                completion(.failure(error))
+            } else if let data = data, data.count > 0, let response = response as? HTTPURLResponse {
+                completion(.success((response, data)))
+            } else {
+                completion(.failure(UnexpectedError()))
             }
         }.resume()
     }
