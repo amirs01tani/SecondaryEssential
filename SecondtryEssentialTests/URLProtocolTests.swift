@@ -57,7 +57,12 @@ final class URLProtocolTests: XCTestCase {
     }
     
     func test_getFromURL_succeedsWithEmptyDataOnHTTPURLResponseWithNilData() {
-        XCTAssertNotNil(resultFor(data: nil, response: anyHTTPURLResponse(), error: nil))
+        let response = anyHTTPURLResponse()
+        let receivedValues = resultFor(data: nil, response: response, error: nil)
+        let emptyData = Data()
+        XCTAssertEqual(receivedValues.data, emptyData)
+        XCTAssertEqual(receivedValues.response?.url, response.url)
+        XCTAssertEqual(receivedValues.response?.statusCode, response.statusCode)
     }
     
     func test_getFromURL_succeedsOnHTTPURLResponseWithData() {
