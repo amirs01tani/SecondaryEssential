@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct FeedItemResult {
+public struct LoadFeedResult {
     let data: [FeedItem]
     let error: Error
 }
 
 public protocol FeedLoader {
-    func load(completion: (FeedItemResult)-> ())
+    func load(completion: (LoadFeedResult)-> ())
 }
 
 public protocol HTTPClient {
