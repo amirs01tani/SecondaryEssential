@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "683F4A00-DBA8-4D52-8E4B-15296A433D7F",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SecondtryEssential.xcodeproj",
+        "identifier" : "293A61402B2773EC00EF0B5B",
+        "name" : "SecondtryEssentialEndToEndTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SecondtryEssential.xcodeproj",
+        "identifier" : "29CAE6FA2AF3A50C0015AA80",
+        "name" : "SecondtryEssentialTests"
+      }
+    }
+  ],
+  "version" : 1
+}
