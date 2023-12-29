@@ -137,7 +137,7 @@ final class URLProtocolTests: XCTestCase {
     }
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
-        let sut = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+        let sut = URLSessionHTTPClient()
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
@@ -182,7 +182,9 @@ final class URLProtocolTests: XCTestCase {
             client?.urlProtocolDidFinishLoading(self)
         }
         
-        override func stopLoading() {}
+        override func stopLoading() {
+            client?.urlProtocolDidFinishLoading(self)
+        }
         
         static func startIntercepting() {
             URLProtocol.registerClass(URLProtocolStub.self)
