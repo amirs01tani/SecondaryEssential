@@ -8,13 +8,22 @@
 import XCTest
 
 class LocalFeedLoader{
+    let store: FeedStore
     init(store: FeedStore){
-        
+        self.store = store
+    }
+    
+    func save() {
+        store.deleteCachedFeed()
     }
 }
 
 class FeedStore{
     var deleteCacheFeedCallCount = 0
+    
+    func deleteCachedFeed() {
+        deleteCacheFeedCallCount += 1
+    }
 }
 
 final class FeedCacheUseCaseTests: XCTestCase {
@@ -23,7 +32,15 @@ final class FeedCacheUseCaseTests: XCTestCase {
         let (_, store) = makeSUT()
         XCTAssertEqual(store.deleteCacheFeedCallCount, 0)
     }
+    
+    func test_save_requestsCacheDeletion() {
+        let (sut, store) = makeSUT()
+        sut.save()
+        XCTAssertEqual(store.deleteCacheFeedCallCount, 1)
+    }
 }
+
+
 
 // MARK: - Helpers
 private func makeSUT() -> (sut: LocalFeedLoader, store: FeedStore){
