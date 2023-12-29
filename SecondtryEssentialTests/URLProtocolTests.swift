@@ -76,10 +76,6 @@ final class URLProtocolTests: XCTestCase {
     }
     //MARK: -Helpers
     
-    private func anyNSError() -> Error {
-        return NSError(domain: "", code: 1)
-    }
-    
     private func anyData() -> Data {
         return Data([3,5,4])
     }
@@ -130,10 +126,6 @@ final class URLProtocolTests: XCTestCase {
         }
         wait(for: [exp], timeout: 1)
         return receivedResult
-    }
-    
-    private func anyURL() -> URL {
-        return URL(string: "http://any-url.com")!
     }
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
