@@ -11,6 +11,6 @@ func anyURL() -> URL {
     return URL(string: "http://any-url.com")!
 }
 
-func anyNSError() -> Error {
+func anyNSError() -> NSError {
     return NSError(domain: "", code: 1)
 }
