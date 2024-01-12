@@ -37,16 +37,25 @@ public class LocalFeedLoader{
     }
     
     public func load(completion: @escaping (LoadResult) -> Void) {
-        store.retrieve { data in
+        store.retrieve { [weak self] data in
+            guard let self else { return }
             switch data {
             case .failure(let error):
                 completion(.failure(error))
-            case let .found(data, _):
-                completion(.success(data.toModels()))
-            case .empty:
+            case let .found(feed, timestamp) where self.validate(timestamp):
+                completion(.success(feed.toModels()))
+            case .empty, .found:
                 completion(.success([]))
             }
         }
+    }
+    
+    private func validate(_ timestamp: Date) -> Bool { let calendar = Calendar(identifier: .gregorian)
+        guard let maxCacheAge = calendar.date (byAdding: .day, value: 7, to: timestamp)
+        else {
+            return false
+        }
+        return currentDate() < maxCacheAge
     }
     
     public func cache(_ items: [LocalFeedItem], completion: @escaping (SaveResult) -> Void) {
