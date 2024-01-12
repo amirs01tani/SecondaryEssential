@@ -8,13 +8,15 @@
 import Foundation
 
 public typealias SaveResult = Error?
-public enum LoadResult
-{
-    case success([LocalFeedItem])
-    case failure(Error?)
-}
 
 public class LocalFeedLoader{
+    
+    public enum LoadResult
+    {
+        case success([LocalFeedItem])
+        case failure(Error?)
+    }
+    
     public let store: FeedStore
     public let currentDate: () -> Date
     
