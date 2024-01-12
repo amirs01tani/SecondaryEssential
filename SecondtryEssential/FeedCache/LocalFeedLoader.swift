@@ -10,7 +10,7 @@ import Foundation
 public typealias SaveResult = Error?
 public enum LoadResult
 {
-    case success
+    case success([LocalFeedItem])
     case failure(Error?)
 }
 
@@ -38,6 +38,8 @@ public class LocalFeedLoader{
         store.retrieve { error in
             if let error = error {
                 completion(.failure(error))
+            } else {
+                completion(.success([]))
             }
         }
     }
