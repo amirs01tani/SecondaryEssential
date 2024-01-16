@@ -9,7 +9,7 @@ import Foundation
 
 public typealias SaveResult = Error?
 
-public class LocalFeedLoader{
+public class LocalFeedLoader: FeedLoader {
     
     public enum LoadResult
     {
@@ -36,7 +36,7 @@ public class LocalFeedLoader{
         }
     }
     
-    public func load(completion: @escaping (LoadResult) -> Void) {
+    public func load(completion: @escaping (LoadFeedResult) -> Void) {
         store.retrieve { [weak self] data in
             guard let self else { return }
             switch data {
@@ -44,9 +44,7 @@ public class LocalFeedLoader{
                 completion(.failure(error))
             case let .found(feed, timestamp) where self.validate(timestamp):
                 completion(.success(feed.toModels()))
-            case .found:
-                completion(.success([]))
-            case .empty:
+            case .found, .empty:
                 completion(.success([]))
             }
         }
