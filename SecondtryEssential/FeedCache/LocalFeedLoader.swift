@@ -37,7 +37,7 @@ public class LocalFeedLoader: FeedLoader {
             switch data {
             case .failure(let error):
                 completion(.failure(error))
-            case let .found(feed, timestamp) where self.validate(timestamp):
+            case let .found(feed, timestamp) where CachePolicy.validate(timestamp, against: currentDate()):
                 completion(.success(feed.toModels()))
             case .found, .empty:
                 completion(.success([]))
@@ -54,18 +54,6 @@ public class LocalFeedLoader: FeedLoader {
                 break
             }
         }
-    }
-    
-    private var maxCacheAgeInDays: Int {
-        return 7
-    }
-    
-    private func validate(_ timestamp: Date) -> Bool { let calendar = Calendar(identifier: .gregorian)
-        guard let maxCacheAge = calendar.date (byAdding: .day, value: maxCacheAgeInDays, to: timestamp)
-        else {
-            return false
-        }
-        return currentDate() < maxCacheAge
     }
     
     public func cache(_ items: [LocalFeedItem], completion: @escaping (SaveResult) -> Void) {
