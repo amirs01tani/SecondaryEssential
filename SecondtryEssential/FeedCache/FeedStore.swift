@@ -8,7 +8,7 @@
 import Foundation
 
 public enum RetrieveResult {
-    case found([LocalFeedItem], timeStamp: Date)
+    case found(feed: [LocalFeedItem], timestamp: Date)
     case empty
     case failure(Error)
 }

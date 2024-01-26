@@ -65,7 +65,7 @@ public class FeedStoreSpy: FeedStore {
     }
     
     public func completeRetrieval(with data: [LocalFeedItem], timeStamp: Date, at index: Int = 0) {
-        retrivalCompletions[index](.found(data, timeStamp: timeStamp))
+        retrivalCompletions[index](.found(feed: data, timestamp: timeStamp))
     }
     
 }
