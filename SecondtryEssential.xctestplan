@@ -9,13 +9,13 @@
     }
   ],
   "defaultOptions" : {
-
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {
       "target" : {
         "containerPath" : "container:SecondtryEssential.xcodeproj",
-        "identifier" : "29C14E992AF3926A00470C52",
+        "identifier" : "29CAE6FA2AF3A50C0015AA80",
         "name" : "SecondtryEssentialTests"
       }
     }
