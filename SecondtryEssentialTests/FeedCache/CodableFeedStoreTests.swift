@@ -9,7 +9,7 @@ import Foundation
 import XCTest
 import SecondtryEssential
 
-class CodableFeedStore {
+class CodableFeedStore: FeedStore {
     private let storeURL: URL
     
     init(storeURL: URL) {
@@ -62,7 +62,7 @@ class CodableFeedStore {
         }
     }
     
-    func delete(completion: @escaping FeedStore.DeletionCompletion) {
+    func deleteCachedFeed(completion: @escaping FeedStore.DeletionCompletion) {
         guard FileManager.default.fileExists(atPath: storeURL.path) else {
             return completion(nil)
         }
@@ -218,7 +218,7 @@ class CodableFeedStoreTests: XCTestCase {
     private func deleteCache(from sut: CodableFeedStore) -> Error? {
         let exp = expectation(description: "Wait for cache insertion" )
         var deletionError: Error?
-        sut.delete(){ receivedDeletionError in
+        sut.deleteCachedFeed(){ receivedDeletionError in
             deletionError = receivedDeletionError
             exp.fulfill()
         }
