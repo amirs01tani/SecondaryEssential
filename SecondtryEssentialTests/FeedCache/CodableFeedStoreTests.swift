@@ -43,8 +43,16 @@ class CodableFeedStore {
     func retrieve(completion: @escaping FeedStore.RetrieveCompletion) {
         guard let data = try? Data (contentsOf: storeURL) else { return completion(.empty) }
         let decoder = JSONDecoder()
-        let cache = try! decoder.decode(Cache.self, from: data)
-        completion(.found(feed: cache.feed.map { $0.local }, timestamp: cache.timestamp))
+        do {
+            if let cache = try? decoder.decode(Cache.self, from: data) {
+                completion(.found(feed: cache.feed.map { $0.local }, timestamp: cache.timestamp))
+            } else {
+                throw(anyNSError())
+            }
+        }
+        catch {
+            completion(.failure(error))
+        }
     }
     
     func insert(_ feed: [LocalFeedItem], timestamp: Date, completion: @escaping FeedStore.InsertionCompletion) {
@@ -87,6 +95,12 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
     }
     
+    func test_retrieve_deliversFailureOnRetrievalError() {
+        let sut = makeSUT()
+        try! "invalid data".write(to: testSpecificStoreUrl(), atomically: false, encoding: .utf8)
+        expect(sut, toRetrieve: .failure(anyNSError()))
+    }
+    
     // ~ MARK: Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> CodableFeedStore {
@@ -109,8 +123,11 @@ class CodableFeedStoreTests: XCTestCase {
             case (.empty, .empty):
                 break
             case let (.found(expected), .found(retrieved)):
-                XCTAssertEqual (retrieved.feed, expected.feed, file: file, line: line)
-                XCTAssertEqual (retrieved.timestamp, expected.timestamp, file: file, line: line)
+                XCTAssertEqual(retrieved.feed, expected.feed, file: file, line: line)
+                XCTAssertEqual(retrieved.timestamp, expected.timestamp, file: file, line: line)
+            case let (.failure(expected), .failure(retrieved)):
+                XCTAssertEqual((retrieved as NSError).code, (expected as NSError).code, file: file, line: line)
+                XCTAssertEqual((retrieved as NSError).domain, (expected as NSError).domain, file: file, line: line)
             default:
                 XCTFail("Expected to retrieve \(expectedResult), got \(retrievedResult) instead",
                         file: file, line: line)
@@ -135,4 +152,5 @@ class CodableFeedStoreTests: XCTestCase {
         return FileManager.default.urls(for: .cachesDirectory,
         in: .userDomainMask).first!.appendingPathComponent ("\(type(of: self)).store")
     }
+    
 }
