@@ -66,8 +66,8 @@ public class CoreDataFeedStore: FeedStore {
             }
         }
     }
-    
 }
+
 @objc(ManagedCache)
 private class ManagedCache: NSManagedObject {
     @NSManaged var timestamp: Date
