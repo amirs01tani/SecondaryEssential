@@ -68,47 +68,6 @@ public class CoreDataFeedStore: FeedStore {
     }
 }
 
-@objc(ManagedCache)
-private class ManagedCache: NSManagedObject {
-    @NSManaged var timestamp: Date
-    @NSManaged var feed: NSOrderedSet
-    
-    var localFeed: [LocalFeedItem] {
-        return feed.compactMap { ($0 as? ManagedFeedImage)?.local }
-    }
-    
-    static func find(in context: NSManagedObjectContext) throws -> ManagedCache? {
-        let request = NSFetchRequest<ManagedCache>(entityName: entity().name!)
-        request.returnsObjectsAsFaults = false
-        return try context.fetch(request).last
-    }
-}
-
-@objc(ManagedFeedImage)
-private class ManagedFeedImage: NSManagedObject {
-    @NSManaged var id: UUID
-    @NSManaged var imageDescription: String?
-    @NSManaged var location: String?
-    @NSManaged var url: URL
-    @NSManaged var cache: ManagedCache
-    
-    
-    static func images(from localFeed: [LocalFeedItem], in context: NSManagedObjectContext) -> NSOrderedSet {
-        return NSOrderedSet(array: localFeed.map { local in
-            let managed = ManagedFeedImage(context: context)
-            managed.id = local.id
-            managed.imageDescription = local.description
-            managed.location = local.location
-            managed.url = local.imageURL
-            return managed
-        })
-    }
-    
-    var local: LocalFeedItem {
-        return LocalFeedItem(id: id, description: imageDescription, location: location, imageURL: url)
-    }
-}
-
 private extension NSPersistentContainer {
     enum LoadingError: Swift.Error {
         case modelNotFound
