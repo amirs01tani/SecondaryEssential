@@ -18,7 +18,18 @@ public class CoreDataFeedStore: FeedStore {
     }
 
     public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
-        completion(nil)
+        let context = self.context
+        context.perform {
+            do {
+                try ManagedCache
+                    .find(in: context)
+                    .map(context.delete)
+                    .map(context.save)
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+        }
     }
     
     public func insert(_ items: [LocalFeedItem], timestamp: Date, completion: @escaping InsertionCompletion) {
@@ -27,14 +38,7 @@ public class CoreDataFeedStore: FeedStore {
             do {
                 let managedCache = ManagedCache(context: context)
                 managedCache.timestamp = timestamp
-                managedCache.feed = NSOrderedSet(array: items.map { local in
-                    let managed = ManagedFeedImage(context: context)
-                    managed.id = local.id
-                    managed.imageDescription = local.description
-                    managed.location = local.location
-                    managed.url = local.imageURL
-                    return managed
-                })
+                managedCache.feed = ManagedFeedImage.images(from: items, in: context)
                 
                 try context.save()
                 completion(nil)
@@ -50,14 +54,8 @@ public class CoreDataFeedStore: FeedStore {
             do {
                 let request = NSFetchRequest<ManagedCache>(entityName: ManagedCache.entity().name!)
                 request.returnsObjectsAsFaults = false
-                if let cache = try context.fetch(request).last {
-                    completion(.found(
-                        feed: cache.feed
-                            .compactMap { ($0 as? ManagedFeedImage) }
-                            .map {
-                                LocalFeedItem(id: $0.id, description: $0.imageDescription, location: $0.location, imageURL: $0.url)
-                            },
-                        timestamp: cache.timestamp))
+                if let cache = try ManagedCache.find(in: context) {
+                    completion(.found(feed: cache.localFeed, timestamp: cache.timestamp))
                 } else {
                     completion(.empty)
                 }
@@ -72,6 +70,16 @@ public class CoreDataFeedStore: FeedStore {
 private class ManagedCache: NSManagedObject {
     @NSManaged var timestamp: Date
     @NSManaged var feed: NSOrderedSet
+    
+    var localFeed: [LocalFeedItem] {
+        return feed.compactMap { ($0 as? ManagedFeedImage)?.local }
+    }
+    
+    static func find(in context: NSManagedObjectContext) throws -> ManagedCache? {
+        let request = NSFetchRequest<ManagedCache>(entityName: entity().name!)
+        request.returnsObjectsAsFaults = false
+        return try context.fetch(request).last
+    }
 }
 
 @objc(ManagedFeedImage)
@@ -81,6 +89,22 @@ private class ManagedFeedImage: NSManagedObject {
     @NSManaged var location: String?
     @NSManaged var url: URL
     @NSManaged var cache: ManagedCache
+    
+    
+    static func images(from localFeed: [LocalFeedItem], in context: NSManagedObjectContext) -> NSOrderedSet {
+        return NSOrderedSet(array: localFeed.map { local in
+            let managed = ManagedFeedImage(context: context)
+            managed.id = local.id
+            managed.imageDescription = local.description
+            managed.location = local.location
+            managed.url = local.imageURL
+            return managed
+        })
+    }
+    
+    var local: LocalFeedItem {
+        return LocalFeedItem(id: id, description: imageDescription, location: location, imageURL: url)
+    }
 }
 
 private extension NSPersistentContainer {

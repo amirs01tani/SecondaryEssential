@@ -170,7 +170,7 @@ extension FeedStoreSpecs where Self: XCTestCase {
         return deletionError
     }
     
-    func testSpecificStoreUrl() -> URL {
+    func testSpecificStoreURL() -> URL {
         return cachesDirectory().appendingPathComponent("\(type(of: self)).store")
     }
     

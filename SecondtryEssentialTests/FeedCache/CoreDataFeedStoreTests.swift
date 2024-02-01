@@ -10,6 +10,19 @@ import XCTest
 import SecondtryEssential
 
 class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
+    
+    override func setUp() {
+        super.setUp()
+        
+        setupEmptyStoreState()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        
+        undoStoreSideEffects()
+    }
+    
     func test_retrieve_emptyOnEmptyCache() {
         let sut = makeSUT()
         
@@ -71,13 +84,15 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
     
     func test_delete_emptiesPreviouslyInsertedCache() {
+        let sut = makeSUT()
         
+        assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
     }
     
     func test_inRaceCondition_queriesRunserially() {
         
     }
-
+    
     // ~ MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
@@ -86,4 +101,17 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
+    
+    private func setupEmptyStoreState() {
+        deleteStoreArtifacts()
+    }
+    
+    private func undoStoreSideEffects() {
+        deleteStoreArtifacts()
+    }
+    
+    private func deleteStoreArtifacts() {
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())
+    }
+    
 }

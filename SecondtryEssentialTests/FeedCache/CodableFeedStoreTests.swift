@@ -13,21 +13,21 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     
     override func setUp() {
         super.setUp()
-        try? FileManager.default.removeItem(at: testSpecificStoreUrl())
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
     
     override func tearDown() {
         super.tearDown()
-        try? FileManager.default.removeItem(at: testSpecificStoreUrl())
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
     
     func test_retrieve_emptyOnEmptyCache() {
-        let sut = makeSUT(storeURL: testSpecificStoreUrl())
+        let sut = makeSUT(storeURL: testSpecificStoreURL())
         assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnEmptyCache() {
-        let sut = makeSUT(storeURL: testSpecificStoreUrl())
+        let sut = makeSUT(storeURL: testSpecificStoreURL())
         assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
     }
     
@@ -37,20 +37,20 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     }
     
     func test_retrieve_deliversFoundValueOnNonEmptyCache() {
-        let sut = makeSUT(storeURL: testSpecificStoreUrl())
+        let sut = makeSUT(storeURL: testSpecificStoreURL())
         assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
     }
     
     func test_retrieve_deliversFailureOnRetrievalError() {
-        let sut = makeSUT(storeURL: testSpecificStoreUrl())
-        try! "invalid data".write(to: testSpecificStoreUrl(), atomically: false, encoding: .utf8)
+        let sut = makeSUT(storeURL: testSpecificStoreURL())
+        try! "invalid data".write(to: testSpecificStoreURL(), atomically: false, encoding: .utf8)
         assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnFailure() {
-        let sut = makeSUT(storeURL: testSpecificStoreUrl())
-        try! "invalid data".write(to: testSpecificStoreUrl(), atomically: false, encoding: .utf8)
-        try! "invalid data".write(to: testSpecificStoreUrl(), atomically: false, encoding: .utf8)
+        let sut = makeSUT(storeURL: testSpecificStoreURL())
+        try! "invalid data".write(to: testSpecificStoreURL(), atomically: false, encoding: .utf8)
+        try! "invalid data".write(to: testSpecificStoreURL(), atomically: false, encoding: .utf8)
         expect(sut, toRetrieveTwice: .failure(anyNSError()))
     }
     
@@ -65,7 +65,7 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     }
     
     func test_insert_overridesPreviouslyInsertedCachedValues() {
-        let sut = makeSUT(storeURL: testSpecificStoreUrl())
+        let sut = makeSUT(storeURL: testSpecificStoreURL())
         assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
     }
     
