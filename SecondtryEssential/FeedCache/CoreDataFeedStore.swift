@@ -16,10 +16,14 @@ public class CoreDataFeedStore: FeedStore {
         container = try NSPersistentContainer.load(modelName: "FeedStore", url: storeURL, in: bundle)
         context = container.newBackgroundContext()
     }
+    
+    private func perform(_ action: @escaping (NSManagedObjectContext) -> Void) {
+        let context = self.context
+        context.perform { action(context) }
+    }
 
     public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
-        let context = self.context
-        context.perform {
+        perform { context in
             do {
                 try ManagedCache
                     .find(in: context)
@@ -33,8 +37,7 @@ public class CoreDataFeedStore: FeedStore {
     }
     
     public func insert(_ items: [LocalFeedItem], timestamp: Date, completion: @escaping InsertionCompletion) {
-        let context = self.context
-        context.perform {
+        perform { context in
             do {
                 let managedCache = ManagedCache(context: context)
                 managedCache.timestamp = timestamp
@@ -49,8 +52,7 @@ public class CoreDataFeedStore: FeedStore {
     }
     
     public func retrieve(completion: @escaping RetrieveCompletion) {
-        let context = self.context
-        context.perform {
+        perform { context in
             do {
                 let request = NSFetchRequest<ManagedCache>(entityName: ManagedCache.entity().name!)
                 request.returnsObjectsAsFaults = false
