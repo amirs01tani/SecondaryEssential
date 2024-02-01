@@ -31,24 +31,24 @@ final class SecondtryEssentialFeedCacheIntegrationTests: XCTestCase {
     func test_load_deliversItemsSavedOnASeparateInstance() {
         let sutToPerformSave = makeSUT()
         let sutToPerformLoad = makeSUT()
-        let feed = uniqueItems()
+        let feed = uniqueItems().models
         
-        save(feed.local, with: sutToPerformSave)
+        save(feed, with: sutToPerformSave)
         
-        expect(sutToPerformLoad, toLoad: feed.models)
+        expect(sutToPerformLoad, toLoad: feed)
     }
     
     func test_save_overridesItemsSavedOnASeparateInstance() {
             let sutToPerformFirstSave = makeSUT()
             let sutToPerformLastSave = makeSUT()
             let sutToPerformLoad = makeSUT()
-            let firstFeed = uniqueItems()
-            let latestFeed = uniqueItems()
+        let firstFeed = uniqueItems().models
+        let latestFeed = uniqueItems().models
 
-        save(firstFeed.local, with: sutToPerformFirstSave)
-        save(latestFeed.local, with: sutToPerformLastSave)
+        save(firstFeed, with: sutToPerformFirstSave)
+        save(latestFeed, with: sutToPerformLastSave)
 
-        expect(sutToPerformLoad, toLoad: latestFeed.models)
+        expect(sutToPerformLoad, toLoad: latestFeed)
         }
     
     // MARK: Helpers
@@ -69,7 +69,7 @@ final class SecondtryEssentialFeedCacheIntegrationTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private func save(_ feed: [LocalFeedItem], with loader: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
+    private func save(_ feed: [FeedItem], with loader: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
         let saveExp = expectation(description: "Wait for save completion")
         loader.save(feed) { saveError in
             XCTAssertNil(saveError, "Expected to save feed successfully", file: file, line: line)
