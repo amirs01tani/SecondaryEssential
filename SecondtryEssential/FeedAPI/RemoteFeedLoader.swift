@@ -7,11 +7,9 @@
 
 import Foundation
 
-public typealias LoadFeedResult = Swift.Result<[FeedItem], Error>
-
-
 public protocol FeedLoader {
-    func load(completion: @escaping (LoadFeedResult) -> Void)
+    typealias Result = Swift.Result<[FeedItem], Error>
+    func load(completion: @escaping (Result) -> Void)
 }
 
 public protocol HTTPClient {
