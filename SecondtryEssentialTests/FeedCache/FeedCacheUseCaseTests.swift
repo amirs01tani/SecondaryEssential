@@ -22,7 +22,7 @@ final class FeedCacheUseCaseTests: XCTestCase {
     }
     
     func test_save_doesNotRequestCacheInsertionOnDeletionError() {
-        let items = uniqueItems().local
+        let items = uniqueItems().models
         let (sut, store) = makeSUT()
         let deletionError = anyNSError()
         sut.save(items) { _ in }
@@ -32,7 +32,7 @@ final class FeedCacheUseCaseTests: XCTestCase {
     }
     
     func test_save_requestNewCacheInsertionOnSuccessfulDeletion() {
-        let items = uniqueItems().local
+        let items = uniqueItems().models
         let (sut, store) = makeSUT()
         
         sut.save(items) { _ in }
@@ -43,14 +43,14 @@ final class FeedCacheUseCaseTests: XCTestCase {
     
     func test_save_requestNewCacheInsertionWithTimeStampOnSuccessfulDeletion() {
         let timestamp = Date()
-        let items = uniqueItems().local
+        let items = uniqueItems()
         let (sut, store) = makeSUT(currentDate: { timestamp })
         
-        sut.save(items) { _ in }
+        sut.save(items.models) { _ in }
         store.completeDeletionSuccessfully()
         
         XCTAssertEqual(store.receivedMessages.count, 2)
-        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed , .insert(items, timestamp)])
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed , .insert(items.local, timestamp)])
 
     }
     
@@ -85,10 +85,10 @@ final class FeedCacheUseCaseTests: XCTestCase {
     func
     test_save_doesNotDeliverDeletionErrorAfterSUTInstanceHasBeenDeallocated() {
         
-        let store = FeedStoreSpy ()
+        let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader (store: store, currentDate: Date.init)
         var receivedResults = [Error?]()
-        sut?.save(uniqueItems().local) { receivedResults.append($0) }
+        sut?.save(uniqueItems().models) { receivedResults.append($0) }
         sut = nil
         store.completeDeletion(with: anyNSError())
         XCTAssertTrue(receivedResults.isEmpty)
@@ -107,7 +107,7 @@ final class FeedCacheUseCaseTests: XCTestCase {
         let exp = expectation(description: "Wait for save completion")
         var receivedError: Error?
         
-        sut.save(uniqueItems().local) { error in
+        sut.save(uniqueItems().models) { error in
             receivedError = error
             exp.fulfill()
         }
