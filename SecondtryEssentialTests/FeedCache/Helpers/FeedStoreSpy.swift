@@ -8,9 +8,6 @@
 import Foundation
 import SecondtryEssential
 
-public typealias DeletionCompletion = (Error?) -> Void
-public typealias InsertionCompletion = (Error?) -> Void
-
 public class FeedStoreSpy: FeedStore {
     
     enum ReceivedMessage: Equatable {
@@ -31,11 +28,11 @@ public class FeedStoreSpy: FeedStore {
     }
     
     public func completeDeletion(with error: Error, at index: Int = 0) {
-        deletionCompletions[index](error)
+        deletionCompletions[index](.failure(error))
     }
     
     public func completeDeletionSuccessfully(at index: Int = 0) {
-        deletionCompletions[index](nil)
+        deletionCompletions[index](.success(()))
     }
     
     public func insert(_ items: [LocalFeedItem], timestamp: Date, completion: @escaping InsertionCompletion) {
@@ -44,11 +41,11 @@ public class FeedStoreSpy: FeedStore {
     }
     
     public func completeInsertion(with error: Error, at index: Int = 0) {
-        insertCompletions[index](error)
+        insertCompletions[index](.failure(error))
     }
     
     public func completeInsertionSuccessfully(at index: Int = 0) {
-        insertCompletions[index](nil)
+        insertCompletions[index](.success(()))
     }
     
     public func retrieve(completion: @escaping RetrieveCompletion) {
