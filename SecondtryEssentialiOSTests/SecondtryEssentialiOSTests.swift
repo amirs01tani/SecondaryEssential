@@ -10,6 +10,8 @@ import SecondtryEssential
 
 class FeedViewController: UIViewController {
     private var loader: FeedLoader?
+    var refreshControl: UIRefreshControl?
+    
     convenience init(loader: FeedLoader) {
         self.init()
         self.loader = loader
@@ -17,6 +19,12 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
+        load()
+    }
+    
+    @objc func load() {
         loader?.load { _ in }
     }
 }
@@ -32,6 +40,17 @@ final class FeedViewControllerTests: XCTestCase {
         let (sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
         XCTAssertEqual(loader.localCallCount, 1)
+    }
+    
+    func test_pullToResfresh_loadsFields() {
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        sut.refreshControl?.allTargets.forEach { target in
+            sut.refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
+                (target as NSObject).perform(Selector($0))
+            }
+        }
+        XCTAssertEqual(loader.localCallCount, 2)
     }
     
     // MARK: - Healpers
