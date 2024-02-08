@@ -18,6 +18,7 @@
 		29F1430C2B75502000FB6108 /* EssentialProtoTypeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1430B2B75502000FB6108 /* EssentialProtoTypeUITestsLaunchTests.swift */; };
 		29F143192B75509000FB6108 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143182B75509000FB6108 /* FeedImageViewModel.swift */; };
 		29F1431B2B75533700FB6108 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1431A2B75533700FB6108 /* FeedImageCell.swift */; };
+		29F143382B755FB700FB6108 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143372B755FB700FB6108 /* UIView+Shimmering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		29F1430B2B75502000FB6108 /* EssentialProtoTypeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialProtoTypeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29F143182B75509000FB6108 /* FeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewModel.swift; sourceTree = "<group>"; };
 		29F1431A2B75533700FB6108 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
+		29F143372B755FB700FB6108 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				29F142F62B75502000FB6108 /* Info.plist */,
 				29F143182B75509000FB6108 /* FeedImageViewModel.swift */,
 				29F1431A2B75533700FB6108 /* FeedImageCell.swift */,
+				29F143372B755FB700FB6108 /* UIView+Shimmering.swift */,
 			);
 			path = EssentialProtoType;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				29F142ED2B75501F00FB6108 /* FeedViewController.swift in Sources */,
 				29F142E92B75501F00FB6108 /* AppDelegate.swift in Sources */,
 				29F143192B75509000FB6108 /* FeedImageViewModel.swift in Sources */,
+				29F143382B755FB700FB6108 /* UIView+Shimmering.swift in Sources */,
 				29F142EB2B75501F00FB6108 /* SceneDelegate.swift in Sources */,
 				29F1431B2B75533700FB6108 /* FeedImageCell.swift in Sources */,
 			);
