@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "D840973F-C507-40BB-8920-A02DCE38681E",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SecondtryEssential.xcodeproj",
+        "identifier" : "29F143272B755E3300FB6108",
+        "name" : "SecondtryEssentialiOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

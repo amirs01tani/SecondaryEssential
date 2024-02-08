@@ -42,6 +42,8 @@
 		29CAE6FE2AF3A50C0015AA80 /* SecondtryEssentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CAE6FD2AF3A50C0015AA80 /* SecondtryEssentialTests.swift */; };
 		29CAE6FF2AF3A50C0015AA80 /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; };
 		29E16BA72B59C79700936FC4 /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E16BA62B59C79600936FC4 /* CodableFeedStoreTests.swift */; };
+		29F143292B755E3300FB6108 /* SecondtryEssentialiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F143212B755E3300FB6108 /* SecondtryEssentialiOS.framework */; };
+		29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 29C14E912AF3926A00470C52;
 			remoteInfo = SecondtryEssential;
+		};
+		29F1432A2B755E3300FB6108 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29C14E892AF3926A00470C52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29F143202B755E3300FB6108;
+			remoteInfo = SecondtryEssentialiOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -104,6 +113,10 @@
 		29CAE6FB2AF3A50C0015AA80 /* SecondtryEssentialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondtryEssentialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAE6FD2AF3A50C0015AA80 /* SecondtryEssentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondtryEssentialTests.swift; sourceTree = "<group>"; };
 		29E16BA62B59C79600936FC4 /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
+		29F143212B755E3300FB6108 /* SecondtryEssentialiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SecondtryEssentialiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29F143282B755E3300FB6108 /* SecondtryEssentialiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondtryEssentialiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondtryEssentialiOSTests.swift; sourceTree = "<group>"; };
+		29F143362B755F2B00FB6108 /* SecondtryEssentialiOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SecondtryEssentialiOS.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +148,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				29CAE6FF2AF3A50C0015AA80 /* SecondtryEssential.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F1431E2B755E3300FB6108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F143252B755E3300FB6108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29F143292B755E3300FB6108 /* SecondtryEssentialiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,12 +264,15 @@
 		29C14E882AF3926A00470C52 = {
 			isa = PBXGroup;
 			children = (
+				29F143362B755F2B00FB6108 /* SecondtryEssentialiOS.xctestplan */,
 				293A614D2B2793A500EF0B5B /* CI.xctestplan */,
 				2981766F2AF3A2A800102779 /* SecondtryEssential.xctestplan */,
 				29C14E942AF3926A00470C52 /* SecondtryEssential */,
 				29CAE6FC2AF3A50C0015AA80 /* SecondtryEssentialTests */,
 				293A61422B2773EC00EF0B5B /* SecondtryEssentialEndToEndTests */,
 				29721A132B6C1F4A002576A3 /* SecondtryEssentialFeedCacheIntegrationTests */,
+				29F143222B755E3300FB6108 /* SecondtryEssentialiOS */,
+				29F1432C2B755E3300FB6108 /* SecondtryEssentialiOSTests */,
 				29C14E932AF3926A00470C52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -253,6 +284,8 @@
 				29CAE6FB2AF3A50C0015AA80 /* SecondtryEssentialTests.xctest */,
 				293A61412B2773EC00EF0B5B /* SecondtryEssentialEndToEndTests.xctest */,
 				29721A122B6C1F4A002576A3 /* SecondtryEssentialFeedCacheIntegrationTests.xctest */,
+				29F143212B755E3300FB6108 /* SecondtryEssentialiOS.framework */,
+				29F143282B755E3300FB6108 /* SecondtryEssentialiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,10 +311,32 @@
 			path = SecondtryEssentialTests;
 			sourceTree = "<group>";
 		};
+		29F143222B755E3300FB6108 /* SecondtryEssentialiOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SecondtryEssentialiOS;
+			sourceTree = "<group>";
+		};
+		29F1432C2B755E3300FB6108 /* SecondtryEssentialiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */,
+			);
+			path = SecondtryEssentialiOSTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		29C14E8D2AF3926A00470C52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F1431C2B755E3300FB6108 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,6 +418,42 @@
 			productReference = 29CAE6FB2AF3A50C0015AA80 /* SecondtryEssentialTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		29F143202B755E3300FB6108 /* SecondtryEssentialiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29F143342B755E3300FB6108 /* Build configuration list for PBXNativeTarget "SecondtryEssentialiOS" */;
+			buildPhases = (
+				29F1431C2B755E3300FB6108 /* Headers */,
+				29F1431D2B755E3300FB6108 /* Sources */,
+				29F1431E2B755E3300FB6108 /* Frameworks */,
+				29F1431F2B755E3300FB6108 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SecondtryEssentialiOS;
+			productName = SecondtryEssentialiOS;
+			productReference = 29F143212B755E3300FB6108 /* SecondtryEssentialiOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		29F143272B755E3300FB6108 /* SecondtryEssentialiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29F143352B755E3300FB6108 /* Build configuration list for PBXNativeTarget "SecondtryEssentialiOSTests" */;
+			buildPhases = (
+				29F143242B755E3300FB6108 /* Sources */,
+				29F143252B755E3300FB6108 /* Frameworks */,
+				29F143262B755E3300FB6108 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29F1432B2B755E3300FB6108 /* PBXTargetDependency */,
+			);
+			name = SecondtryEssentialiOSTests;
+			productName = SecondtryEssentialiOSTests;
+			productReference = 29F143282B755E3300FB6108 /* SecondtryEssentialiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -387,6 +478,12 @@
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
 					};
+					29F143202B755E3300FB6108 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					29F143272B755E3300FB6108 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 29C14E8C2AF3926A00470C52 /* Build configuration list for PBXProject "SecondtryEssential" */;
@@ -406,6 +503,8 @@
 				29CAE6FA2AF3A50C0015AA80 /* SecondtryEssentialTests */,
 				293A61402B2773EC00EF0B5B /* SecondtryEssentialEndToEndTests */,
 				29721A112B6C1F4A002576A3 /* SecondtryEssentialFeedCacheIntegrationTests */,
+				29F143202B755E3300FB6108 /* SecondtryEssentialiOS */,
+				29F143272B755E3300FB6108 /* SecondtryEssentialiOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -433,6 +532,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		29CAE6F92AF3A50C0015AA80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F1431F2B755E3300FB6108 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F143262B755E3300FB6108 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -502,6 +615,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29F1431D2B755E3300FB6108 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F143242B755E3300FB6108 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -523,6 +651,11 @@
 			target = 29C14E912AF3926A00470C52 /* SecondtryEssential */;
 			targetProxy = 29CAE7002AF3A50C0015AA80 /* PBXContainerItemProxy */;
 		};
+		29F1432B2B755E3300FB6108 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29F143202B755E3300FB6108 /* SecondtryEssentialiOS */;
+			targetProxy = 29F1432A2B755E3300FB6108 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -537,6 +670,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SecondtryEssentialEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
@@ -553,6 +687,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SecondtryEssentialEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
@@ -750,6 +885,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.essential.amir.SecondtryEssential;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -784,6 +920,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.essential.amir.SecondtryEssential;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -801,6 +938,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.essential.amir.SecondtryEssentialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -819,8 +957,113 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.essential.amir.SecondtryEssentialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		29F143302B755E3300FB6108 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E78623RKW6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.secondtry.SecondtryEssentialiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29F143312B755E3300FB6108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E78623RKW6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.secondtry.SecondtryEssentialiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29F143322B755E3300FB6108 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E78623RKW6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.secondtry.SecondtryEssentialiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29F143332B755E3300FB6108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E78623RKW6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.secondtry.SecondtryEssentialiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -868,6 +1111,24 @@
 			buildConfigurations = (
 				29CAE7032AF3A50C0015AA80 /* Debug */,
 				29CAE7042AF3A50C0015AA80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29F143342B755E3300FB6108 /* Build configuration list for PBXNativeTarget "SecondtryEssentialiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29F143302B755E3300FB6108 /* Debug */,
+				29F143312B755E3300FB6108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29F143352B755E3300FB6108 /* Build configuration list for PBXNativeTarget "SecondtryEssentialiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29F143322B755E3300FB6108 /* Debug */,
+				29F143332B755E3300FB6108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
