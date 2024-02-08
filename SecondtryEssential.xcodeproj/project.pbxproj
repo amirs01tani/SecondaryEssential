@@ -48,6 +48,7 @@
 		29F1433B2B7564EF00FB6108 /* SecondtryEssential.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29F1433F2B7564FF00FB6108 /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; platformFilter = ios; };
 		29F143402B7564FF00FB6108 /* SecondtryEssential.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		29F143442B7565E500FB6108 /* MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968E5782B1A8704008E44AC /* MemoryLeakTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -683,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F143442B7565E500FB6108 /* MemoryLeakTracker.swift in Sources */,
 				29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
