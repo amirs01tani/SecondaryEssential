@@ -24,15 +24,13 @@ class FeedViewController: UIViewController {
 final class FeedViewControllerTests: XCTestCase {
     
     func test_init_doesNotLoadFeed() {
-        let loader = LoaderSpy()
-        _ = FeedViewController(loader: loader)
+        let (_, loader) = makeSUT()
         XCTAssertEqual(loader.localCallCount, 0)
     }
     
     func test_viewDidLoad_loadsFeed() {
-        let loader = LoaderSpy()
-        let viewController = FeedViewController(loader: loader)
-        viewController.loadViewIfNeeded()
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
         XCTAssertEqual(loader.localCallCount, 1)
     }
     
