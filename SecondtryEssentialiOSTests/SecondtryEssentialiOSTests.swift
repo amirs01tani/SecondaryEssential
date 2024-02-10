@@ -39,34 +39,41 @@ final class FeedViewControllerTests: XCTestCase {
     
     func test_init_doesNotLoadFeed() {
         let (_, loader) = makeSUT()
-        XCTAssertEqual(loader.localCallCount, 0)
+        XCTAssertEqual(loader.loadCallCount, 0)
     }
     
     func test_viewDidLoad_loadsFeed() {
         let (sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
-        XCTAssertEqual(loader.localCallCount, 0)
+        XCTAssertEqual(loader.loadCallCount, 0)
         sut.beginAppearanceTransition(true, animated: false)
         sut.endAppearanceTransition()
-        XCTAssertEqual(loader.localCallCount, 1)
+        XCTAssertEqual(loader.loadCallCount, 1)
     }
     
     func test_pullToResfresh_loadsFields() {
         let (sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
-        XCTAssertEqual(loader.localCallCount, 0)
+        XCTAssertEqual(loader.loadCallCount, 0)
         sut.beginAppearanceTransition(true, animated: false)
         sut.endAppearanceTransition()
-        XCTAssertEqual(loader.localCallCount, 1)
+        XCTAssertEqual(loader.loadCallCount, 1)
         sut.beginAppearanceTransition(true, animated: false)
         sut.endAppearanceTransition()
-        XCTAssertEqual(loader.localCallCount, 2)
+        XCTAssertEqual(loader.loadCallCount, 2)
     }
     
     func test_viewDidLoad_showsLoadingIndicator() {
         let (sut, _) = makeSUT()
         sut.simulateAppearance()
         XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
+    }
+    
+    func test_pullToRefresh_hidesLoadingIndicatorOnLoaderCompletion() {
+        let (sut, loader) = makeSUT()
+        sut.refreshControl?.simulatePullToRefresh()
+        loader.completeFeedloading()
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
     }
     
     // MARK: - Healpers
@@ -81,12 +88,19 @@ final class FeedViewControllerTests: XCTestCase {
     
     class LoaderSpy: FeedLoader {
         
-        private(set) var localCallCount: Int = 0
-        
-        func load(completion: @escaping (FeedLoader.Result) -> Void) {
-            localCallCount += 1
+        private var completions = [(FeedLoader.Result) -> Void]()
+
+        var loadCallCount: Int {
+            return completions.count
         }
         
+        func load(completion: @escaping (FeedLoader.Result) -> Void) {
+            completions.append(completion)
+        }
+        
+        func completeFeedloading() {
+            completions[0](.success([]))
+        }
     }
 }
 
