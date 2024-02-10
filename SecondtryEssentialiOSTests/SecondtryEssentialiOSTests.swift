@@ -25,12 +25,13 @@ class FeedViewController: UITableViewController {
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
         
-        refreshControl?.beginRefreshing()
         load()
     }
     
     @objc private func load() {
-        loader?.load { _ in
+        refreshControl?.beginRefreshing()
+        loader?.load { [weak self] _ in
+            self?.refreshControl?.endRefreshing()
         }
     }
 }
@@ -69,13 +70,31 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
     }
     
+    func test_viewDidLoad_hidesLoadingIndicatorOnLoaderCompletion() {
+        let (sut, loader) = makeSUT()
+        
+        sut.simulateAppearance()
+        loader.completeFeedloading()
+        
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
+    }
+    
+    func test_pullToRefresh_showsLoadingIndicator () {
+        let (sut, _) = makeSUT()
+        
+        sut.replaceRefreshControlWithFakeForiOS17Support()
+        sut.refreshControl?.simulatePullToRefresh()
+        
+        XCTAssertEqual(sut.refreshControl?.isRefreshing, true)
+    }
+    
     func test_pullToRefresh_hidesLoadingIndicatorOnLoaderCompletion() {
         let (sut, loader) = makeSUT()
+        sut.replaceRefreshControlWithFakeForiOS17Support()
         sut.refreshControl?.simulatePullToRefresh()
         loader.completeFeedloading()
         XCTAssertEqual(sut.refreshControl?.isRefreshing, false)
     }
-    
     // MARK: - Healpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
@@ -125,7 +144,7 @@ extension FeedViewController {
         endAppearanceTransition()
     }
     
-    func replaceRefreshControlWithFakeForiOS17Support () {
+    func replaceRefreshControlWithFakeForiOS17Support() {
         let fake = FakeRefreshControl()
         refreshControl?.allTargets.forEach { target in
             refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
