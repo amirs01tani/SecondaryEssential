@@ -10,40 +10,37 @@ import UIKit
 import SecondtryEssential
 
 public final class FeedViewController: UITableViewController {
-    private var feedLoader: FeedLoader?
+    private(set) public var refreshController: FeedRefreshViewController?
     private var imageLoader: FeedImageDataLoader?
-    private var tableModel = [FeedImage]()
+    private var tableModel = [FeedImage]() {
+        didSet { tableView.reloadData() }
+    }
+    private var onViewIsAppearing: ((FeedViewController) -> Void)?
     private var tasks = [IndexPath: FeedImageDataLoaderTask]()
     
     public convenience init(loader: FeedLoader, imageLoader: FeedImageDataLoader) {
         self.init()
-        self.feedLoader = loader
+        self.refreshController = FeedRefreshViewController(feedLoader: loader)
         self.imageLoader = imageLoader
-        
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
+        tableView.refreshControl = refreshController?.view
+        refreshController?.onRefresh = { [weak self] result in
+            self?.tableModel = result
+        }
         tableView.prefetchDataSource = self
+        onViewIsAppearing = { vc in
+            vc.onViewIsAppearing = nil
+            vc.refreshController?.refresh()
+        }
     }
-    
+
     public override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
-        
-        load()
-    }
-    
-    @objc private func load() {
-        refreshControl?.beginRefreshing()
-        feedLoader?.load { [weak self] result in
-            if let model = (try? result.get()) {
-                self?.tableModel = model
-                self?.tableView.reloadData()
-            }
-            self?.refreshControl?.endRefreshing()
-        }
+
+        onViewIsAppearing?(self)
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -20,13 +20,16 @@ extension FeedViewController {
     }
     
     func replaceRefreshControlWithFakeForiOS17Support() {
-        let fake = FakeRefreshControl()
+        let fakeRefreshControl = FakeRefreshControl()
+
         refreshControl?.allTargets.forEach { target in
-            refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
-                action in fake.addTarget (target, action: Selector(action), for: .valueChanged)
+            refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
+                fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
             }
         }
-        refreshControl = fake
+
+        refreshControl = fakeRefreshControl
+        refreshController?.view = fakeRefreshControl
     }
     
     func numberOfRenderedFeedImageViews() -> Int {
@@ -44,7 +47,6 @@ extension FeedViewController {
     }
     
     func simulateUserInitiatedFeedReload() {
-        replaceRefreshControlWithFakeForiOS17Support()
         refreshControl?.simulatePullToRefresh()
     }
     
