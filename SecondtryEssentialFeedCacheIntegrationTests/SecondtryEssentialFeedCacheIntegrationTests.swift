@@ -53,7 +53,7 @@ final class SecondtryEssentialFeedCacheIntegrationTests: XCTestCase {
     
     // MARK: Helpers
     
-    private func expect(_ sut: LocalFeedLoader, toLoad expectedFeed: [FeedItem], file: StaticString = #file, line: UInt = #line) {
+    private func expect(_ sut: LocalFeedLoader, toLoad expectedFeed: [FeedImage], file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
         sut.load { result in
             switch result {
@@ -69,7 +69,7 @@ final class SecondtryEssentialFeedCacheIntegrationTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private func save(_ feed: [FeedItem], with loader: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
+    private func save(_ feed: [FeedImage], with loader: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
         let saveExp = expectation(description: "Wait for save completion")
         loader.save(feed) { saveError in
             XCTAssertNil(saveError, "Expected to save feed successfully", file: file, line: line)

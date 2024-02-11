@@ -16,11 +16,11 @@ func anyNSError() -> NSError {
     return NSError(domain: "", code: 1)
 }
 
-var uniqueItem: FeedItem {
-    return FeedItem(id: UUID.init(), imageURL: anyURL())
+var uniqueItem: FeedImage {
+    return FeedImage(id: UUID.init(), imageURL: anyURL())
 }
 
-func uniqueItems() -> (models: [FeedItem], local: [LocalFeedItem]) {
+func uniqueItems() -> (models: [FeedImage], local: [LocalFeedItem]) {
     let models = [uniqueItem, uniqueItem]
     let
     local = models.map { LocalFeedItem(id: $0.id, description: $0.description, location:

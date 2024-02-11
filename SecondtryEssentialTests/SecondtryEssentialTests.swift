@@ -105,8 +105,8 @@ class FeedItemLoaderTests: XCTestCase {
     
     //MARK: - Helpers
     
-    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (item: FeedItem, json: [String: Any]){
-        let item = FeedItem(id: id, description: description, location: location, imageURL: imageURL)
+    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (item: FeedImage, json: [String: Any]){
+        let item = FeedImage(id: id, description: description, location: location, imageURL: imageURL)
         let json = [
             "id": id.uuidString,
             "description": description,

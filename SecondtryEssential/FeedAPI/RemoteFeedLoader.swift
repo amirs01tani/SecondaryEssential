@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol FeedLoader {
-    typealias Result = Swift.Result<[FeedItem], Error>
+    typealias Result = Swift.Result<[FeedImage], Error>
     func load(completion: @escaping (Result) -> Void)
 }
 
@@ -34,7 +34,7 @@ public class RemoteFeedLoader {
     }
     
     public enum Result: Equatable {
-        case success([FeedItem])
+        case success([FeedImage])
         case failure(Error)
     }
     
@@ -64,8 +64,8 @@ public class RemoteFeedLoader {
 }
 
 private extension Array where Element == RemoteFeedItem {
-    func toModels() -> [FeedItem] {
-        return map { FeedItem(id: $0.id, description: $0.description, location: $0.location,
+    func toModels() -> [FeedImage] {
+        return map { FeedImage(id: $0.id, description: $0.description, location: $0.location,
                               imageURL: $0.image) }
     }
 }
@@ -76,8 +76,8 @@ public struct RemoteFeedItem: Decodable {
     let location: String?
     let image: URL
     
-    var item: FeedItem {
-        return FeedItem(id: id, description: description, location: location, imageURL: image)
+    var item: FeedImage {
+        return FeedImage(id: id, description: description, location: location, imageURL: image)
     }
 }
 
