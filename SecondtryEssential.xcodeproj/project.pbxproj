@@ -375,9 +375,8 @@
 		29F143222B755E3300FB6108 /* SecondtryEssentialiOS */ = {
 			isa = PBXGroup;
 			children = (
-				29F143452B78C1A400FB6108 /* FeedImageCell.swift */,
-				29F143472B78C43300FB6108 /* FeedViewController.swift */,
-				29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */,
+				29F143552B791E1F00FB6108 /* Views */,
+				29F143542B791E1400FB6108 /* Controllers */,
 			);
 			path = SecondtryEssentialiOS;
 			sourceTree = "<group>";
@@ -407,6 +406,23 @@
 				29F143522B791D4400FB6108 /* UIControl+TestHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		29F143542B791E1400FB6108 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				29F143472B78C43300FB6108 /* FeedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		29F143552B791E1F00FB6108 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */,
+				29F143452B78C1A400FB6108 /* FeedImageCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
