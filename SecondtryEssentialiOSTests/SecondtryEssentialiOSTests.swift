@@ -384,15 +384,7 @@ final class FeedViewControllerTests: XCTestCase {
 }
 
 
-extension UIRefreshControl {
-    func simulatePullToRefresh() {
-        allTargets.forEach { target in
-            actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
-                (target as NSObject).perform(Selector($0))
-            }
-        }
-    }
-}
+
 
 private class FakeRefreshControl: UIRefreshControl {
     private var _isRefreshing = false
