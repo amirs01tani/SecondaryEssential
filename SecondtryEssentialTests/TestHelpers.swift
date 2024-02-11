@@ -24,6 +24,6 @@ func uniqueItems() -> (models: [FeedImage], local: [LocalFeedItem]) {
     let models = [uniqueItem, uniqueItem]
     let
     local = models.map { LocalFeedItem(id: $0.id, description: $0.description, location:
-                                        $0.location, imageURL: $0.imageURL) }
+                                        $0.location, imageURL: $0.url) }
     return (models, local)
 }
