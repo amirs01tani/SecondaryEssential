@@ -51,6 +51,7 @@
 		29F143442B7565E500FB6108 /* MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968E5782B1A8704008E44AC /* MemoryLeakTracker.swift */; };
 		29F143462B78C1A400FB6108 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143452B78C1A400FB6108 /* FeedImageCell.swift */; };
 		29F143482B78C43300FB6108 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143472B78C43300FB6108 /* FeedViewController.swift */; };
+		29F1434A2B78E18C00FB6108 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		29F143362B755F2B00FB6108 /* SecondtryEssentialiOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SecondtryEssentialiOS.xctestplan; sourceTree = "<group>"; };
 		29F143452B78C1A400FB6108 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		29F143472B78C43300FB6108 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 			children = (
 				29F143452B78C1A400FB6108 /* FeedImageCell.swift */,
 				29F143472B78C43300FB6108 /* FeedViewController.swift */,
+				29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */,
 			);
 			path = SecondtryEssentialiOS;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F1434A2B78E18C00FB6108 /* UIView+Shimmering.swift in Sources */,
 				29F143482B78C43300FB6108 /* FeedViewController.swift in Sources */,
 				29F143462B78C1A400FB6108 /* FeedImageCell.swift in Sources */,
 			);
