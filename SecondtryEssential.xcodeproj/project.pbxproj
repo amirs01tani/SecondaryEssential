@@ -52,6 +52,7 @@
 		29F143462B78C1A400FB6108 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143452B78C1A400FB6108 /* FeedImageCell.swift */; };
 		29F143482B78C43300FB6108 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143472B78C43300FB6108 /* FeedViewController.swift */; };
 		29F1434A2B78E18C00FB6108 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */; };
+		29F1434D2B791BA700FB6108 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1434C2B791BA700FB6108 /* UIImage+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		29F143452B78C1A400FB6108 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		29F143472B78C43300FB6108 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		29F1434C2B791BA700FB6108 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 		29F1432C2B755E3300FB6108 /* SecondtryEssentialiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				29F1434B2B791B8500FB6108 /* Helpers */,
 				29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */,
 			);
 			path = SecondtryEssentialiOSTests;
@@ -387,6 +390,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29F1434B2B791B8500FB6108 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				29F1434C2B791BA700FB6108 /* UIImage+TestHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -699,6 +710,7 @@
 			files = (
 				29F143442B7565E500FB6108 /* MemoryLeakTracker.swift in Sources */,
 				29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */,
+				29F1434D2B791BA700FB6108 /* UIImage+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

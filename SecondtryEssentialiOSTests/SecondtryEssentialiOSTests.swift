@@ -162,6 +162,18 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.cancelledImageURLs, [image0.url, image1.url], "Expected two cancelled image URL requests once second image is also not visible anymore")
     }
     
+    func test_feedImageViewRetryButton_isVisibleOnInvalidImageData () {
+        let
+        (sut, loader) = makeSUT()
+        sut.simulateAppearance()
+        loader.completeFeedLoading (with: [makeImage()])
+        let view = sut.simulateFeedImageViewVisible(at: 0)
+        XCTAssertEqual(view?.isShowingRetryAction, false, "Expected no retry action while loading image")
+        let invalidImageData = Data("invalid image data".utf8)
+        loader.completeImageLoading(with: invalidImageData, at: 0)
+        XCTAssertEqual (view?.isShowingRetryAction, true, "Expected retry action once image loading completes with invalid image data")
+    }
+    
     func test_feedImageViewLoadingIndicator_isVisibleWhileLoadingImage() {
         let (sut, loader) = makeSUT()
         
@@ -496,18 +508,7 @@ private extension FeedImageCell {
 }
 
 
-private extension UIImage {
-    static func make(withColor color: UIColor) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        let format = UIGraphicsImageRendererFormat()
-                format.scale = 1
 
-        return UIGraphicsImageRenderer(size: rect.size, format: format).image { rendererContext in
-            color.setFill()
-            rendererContext.fill(rect)
-        }
-    }
-}
 
 
 private extension UIButton {
