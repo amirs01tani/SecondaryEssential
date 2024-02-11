@@ -385,8 +385,7 @@
 		29F143222B755E3300FB6108 /* SecondtryEssentialiOS */ = {
 			isa = PBXGroup;
 			children = (
-				29F143552B791E1F00FB6108 /* Views */,
-				29F143542B791E1400FB6108 /* Controllers */,
+				29F143602B79220000FB6108 /* Feed UI */,
 			);
 			path = SecondtryEssentialiOS;
 			sourceTree = "<group>";
@@ -394,8 +393,7 @@
 		29F1432C2B755E3300FB6108 /* SecondtryEssentialiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				29F1434B2B791B8500FB6108 /* Helpers */,
-				29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */,
+				29F143612B79221200FB6108 /* Feed UI */,
 			);
 			path = SecondtryEssentialiOSTests;
 			sourceTree = "<group>";
@@ -438,6 +436,24 @@
 				29F143452B78C1A400FB6108 /* FeedImageCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		29F143602B79220000FB6108 /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				29F143552B791E1F00FB6108 /* Views */,
+				29F143542B791E1400FB6108 /* Controllers */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
+		29F143612B79221200FB6108 /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				29F1434B2B791B8500FB6108 /* Helpers */,
+				29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */,
+			);
+			path = "Feed UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
