@@ -9,13 +9,20 @@ import Foundation
 import UIKit
 import SecondtryEssential
 
+
+public protocol FeedImageDataLoader {
+    func loadImageData(from url: URL)
+}
+
 public class FeedViewController: UITableViewController {
-    private var loader: FeedLoader?
+    private var feedLoader: FeedLoader?
+    private var imageLoader: FeedImageDataLoader?
     private var tableModel = [FeedImage]()
     
-    public convenience init(loader: FeedLoader) {
+    public convenience init(loader: FeedLoader, imageLoader: FeedImageDataLoader) {
         self.init()
-        self.loader = loader
+        self.feedLoader = loader
+        self.imageLoader = imageLoader
     }
     
     public override func viewDidLoad() {
@@ -32,7 +39,7 @@ public class FeedViewController: UITableViewController {
     
     @objc private func load() {
         refreshControl?.beginRefreshing()
-        loader?.load { [weak self] result in
+        feedLoader?.load { [weak self] result in
             if let model = (try? result.get()) {
                 self?.tableModel = model
                 self?.tableView.reloadData()
@@ -51,6 +58,7 @@ public class FeedViewController: UITableViewController {
         cell.locationContainer.isHidden = (cellModel.location == nil)
         cell.locationLabel.text = cellModel.location
         cell.descriptionLabel.text = cellModel.description
+        imageLoader?.loadImageData(from: cellModel.imageURL)
         return cell
     }
 }
