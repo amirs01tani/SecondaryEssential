@@ -60,6 +60,7 @@
 		29F143592B791EE700FB6108 /* FakeRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143582B791EE700FB6108 /* FakeRefreshController.swift */; };
 		29F1435B2B791F4200FB6108 /* FeedImageCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1435A2B791F4200FB6108 /* FeedImageCell+TestHelpers.swift */; };
 		29F1435D2B791FDE00FB6108 /* FeedViewController+LoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1435C2B791FDE00FB6108 /* FeedViewController+LoaderSpy.swift */; };
+		29F1435F2B79206300FB6108 /* FeedViewControllerTests+Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1435E2B79206300FB6108 /* FeedViewControllerTests+Assertion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		29F143582B791EE700FB6108 /* FakeRefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRefreshController.swift; sourceTree = "<group>"; };
 		29F1435A2B791F4200FB6108 /* FeedImageCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageCell+TestHelpers.swift"; sourceTree = "<group>"; };
 		29F1435C2B791FDE00FB6108 /* FeedViewController+LoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+LoaderSpy.swift"; sourceTree = "<group>"; };
+		29F1435E2B79206300FB6108 /* FeedViewControllerTests+Assertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Assertion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +417,7 @@
 				29F143562B791E9400FB6108 /* FeedViewController+TestHelpers.swift */,
 				29F1435A2B791F4200FB6108 /* FeedImageCell+TestHelpers.swift */,
 				29F1435C2B791FDE00FB6108 /* FeedViewController+LoaderSpy.swift */,
+				29F1435E2B79206300FB6108 /* FeedViewControllerTests+Assertion.swift */,
 				29F143582B791EE700FB6108 /* FakeRefreshController.swift */,
 			);
 			path = Helpers;
@@ -748,6 +751,7 @@
 				29F143592B791EE700FB6108 /* FakeRefreshController.swift in Sources */,
 				29F143442B7565E500FB6108 /* MemoryLeakTracker.swift in Sources */,
 				29F143512B791CCA00FB6108 /* UIButton+TestHelpers.swift in Sources */,
+				29F1435F2B79206300FB6108 /* FeedViewControllerTests+Assertion.swift in Sources */,
 				29F1434F2B791C6C00FB6108 /* UIRefreshControl+TestHelpers.swift in Sources */,
 				29F1435D2B791FDE00FB6108 /* FeedViewController+LoaderSpy.swift in Sources */,
 				29F1435B2B791F4200FB6108 /* FeedImageCell+TestHelpers.swift in Sources */,
