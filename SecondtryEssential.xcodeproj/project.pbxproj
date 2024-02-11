@@ -54,6 +54,8 @@
 		29F1434A2B78E18C00FB6108 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */; };
 		29F1434D2B791BA700FB6108 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1434C2B791BA700FB6108 /* UIImage+TestHelpers.swift */; };
 		29F1434F2B791C6C00FB6108 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1434E2B791C6C00FB6108 /* UIRefreshControl+TestHelpers.swift */; };
+		29F143512B791CCA00FB6108 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143502B791CCA00FB6108 /* UIButton+TestHelpers.swift */; };
+		29F143532B791D4400FB6108 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F143522B791D4400FB6108 /* UIControl+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,8 @@
 		29F143492B78E18C00FB6108 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		29F1434C2B791BA700FB6108 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		29F1434E2B791C6C00FB6108 /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
+		29F143502B791CCA00FB6108 /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
+		29F143522B791D4400FB6108 /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,6 +403,8 @@
 			children = (
 				29F1434C2B791BA700FB6108 /* UIImage+TestHelpers.swift */,
 				29F1434E2B791C6C00FB6108 /* UIRefreshControl+TestHelpers.swift */,
+				29F143502B791CCA00FB6108 /* UIButton+TestHelpers.swift */,
+				29F143522B791D4400FB6108 /* UIControl+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -712,7 +718,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				29F143442B7565E500FB6108 /* MemoryLeakTracker.swift in Sources */,
+				29F143512B791CCA00FB6108 /* UIButton+TestHelpers.swift in Sources */,
 				29F1434F2B791C6C00FB6108 /* UIRefreshControl+TestHelpers.swift in Sources */,
+				29F143532B791D4400FB6108 /* UIControl+TestHelpers.swift in Sources */,
 				29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */,
 				29F1434D2B791BA700FB6108 /* UIImage+TestHelpers.swift in Sources */,
 			);
