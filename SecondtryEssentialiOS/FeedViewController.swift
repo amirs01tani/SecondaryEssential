@@ -30,12 +30,14 @@ public class FeedViewController: UITableViewController {
         self.init()
         self.feedLoader = loader
         self.imageLoader = imageLoader
+        
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
+        tableView.prefetchDataSource = self
     }
     
     public override func viewIsAppearing(_ animated: Bool) {
@@ -91,4 +93,12 @@ public class FeedViewController: UITableViewController {
         tasks[indexPath] = nil
     }
     
+}
+extension FeedViewController: UITableViewDataSourcePrefetching {
+    public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach { indexPath in
+            let cellModel = tableModel[indexPath.row]
+            _ = imageLoader?.loadImageData(from: cellModel.url) { _ in }
+        }
+    }
 }
