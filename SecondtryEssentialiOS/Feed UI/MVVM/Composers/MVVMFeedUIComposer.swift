@@ -23,7 +23,8 @@ public final class MVVMFeedUIComposer {
     private static func adaptFeedToCellControllers(forwardingTo controller: MVVMFeedViewController, loader: FeedImageDataLoader) -> ([FeedImage]) -> Void {
         return { [weak controller] feed in
             controller?.tableModel = feed.map { model in
-                MVVMFeedImageCellController(model: model, imageLoader: loader)
+                let viewModel = MVVMFeedImageViewModel(model: model, imageLoader: loader)
+                return MVVMFeedImageCellController(viewModel: viewModel)
             }
         }
     }
