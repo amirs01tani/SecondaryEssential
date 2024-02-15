@@ -16,7 +16,7 @@ public final class MVVMFeedUIComposer {
         let viewModel = MVVMFeedViewModel(feedLoader: feedLoader)
         let refreshController = MVVMFeedRefreshViewController(viewModel: viewModel)
         let feedController = MVVMFeedViewController(refreshController: refreshController)
-        refreshController.onRefresh = adaptFeedToCellControllers(forwardingTo: feedController, loader: imageLoader)
+        viewModel.onFeedLoad = adaptFeedToCellControllers(forwardingTo: feedController, loader: imageLoader)
         return feedController
     }
     
