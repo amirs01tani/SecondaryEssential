@@ -12,6 +12,13 @@
 		293A614C2B27748D00EF0B5B /* MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968E5782B1A8704008E44AC /* MemoryLeakTracker.swift */; };
 		2948E62F2B7EA65C00AF7A05 /* MVVMFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E62E2B7EA65C00AF7A05 /* MVVMFeedViewModel.swift */; };
 		2948E6322B7EBB1F00AF7A05 /* MVVMFeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6312B7EBB1F00AF7A05 /* MVVMFeedImageViewModel.swift */; };
+		2948E67B2B7ECC1B00AF7A05 /* MVPFeedImageCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6712B7ECC1A00AF7A05 /* MVPFeedImageCellViewController.swift */; };
+		2948E67C2B7ECC1B00AF7A05 /* MVPFeedRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6722B7ECC1A00AF7A05 /* MVPFeedRefreshViewController.swift */; };
+		2948E67D2B7ECC1B00AF7A05 /* MVPFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6732B7ECC1A00AF7A05 /* MVPFeedViewController.swift */; };
+		2948E67E2B7ECC1B00AF7A05 /* MVPFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6752B7ECC1A00AF7A05 /* MVPFeedUIComposer.swift */; };
+		2948E67F2B7ECC1B00AF7A05 /* MVPFeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6772B7ECC1A00AF7A05 /* MVPFeedImageCell.swift */; };
+		2948E6802B7ECC1B00AF7A05 /* MVPFeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6792B7ECC1A00AF7A05 /* MVPFeedImageViewModel.swift */; };
+		2948E6812B7ECC1B00AF7A05 /* MVPFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E67A2B7ECC1A00AF7A05 /* MVPFeedPresenter.swift */; };
 		295407B72B06801A0016DF22 /* URLProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295407B62B06801A0016DF22 /* URLProtocolTests.swift */; };
 		295407B92B0684690016DF22 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295407B82B0684690016DF22 /* URLSessionHTTPClient.swift */; };
 		29683C632B5715B000674BD9 /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29683C622B5715B000674BD9 /* ValidateFeedCacheUseCaseTests.swift */; };
@@ -150,6 +157,13 @@
 		293A614D2B2793A500EF0B5B /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		2948E62E2B7EA65C00AF7A05 /* MVVMFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedViewModel.swift; sourceTree = "<group>"; };
 		2948E6312B7EBB1F00AF7A05 /* MVVMFeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedImageViewModel.swift; sourceTree = "<group>"; };
+		2948E6712B7ECC1A00AF7A05 /* MVPFeedImageCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedImageCellViewController.swift; sourceTree = "<group>"; };
+		2948E6722B7ECC1A00AF7A05 /* MVPFeedRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedRefreshViewController.swift; sourceTree = "<group>"; };
+		2948E6732B7ECC1A00AF7A05 /* MVPFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedViewController.swift; sourceTree = "<group>"; };
+		2948E6752B7ECC1A00AF7A05 /* MVPFeedUIComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedUIComposer.swift; sourceTree = "<group>"; };
+		2948E6772B7ECC1A00AF7A05 /* MVPFeedImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedImageCell.swift; sourceTree = "<group>"; };
+		2948E6792B7ECC1A00AF7A05 /* MVPFeedImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedImageViewModel.swift; sourceTree = "<group>"; };
+		2948E67A2B7ECC1A00AF7A05 /* MVPFeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedPresenter.swift; sourceTree = "<group>"; };
 		295407B62B06801A0016DF22 /* URLProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolTests.swift; sourceTree = "<group>"; };
 		295407B82B0684690016DF22 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		29683C622B5715B000674BD9 /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
@@ -276,6 +290,52 @@
 				2948E62E2B7EA65C00AF7A05 /* MVVMFeedViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2948E66F2B7ECBF900AF7A05 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				2948E6742B7ECC1A00AF7A05 /* Composers */,
+				2948E6702B7ECC1A00AF7A05 /* Controllers */,
+				2948E6782B7ECC1A00AF7A05 /* Presenters */,
+				2948E6762B7ECC1A00AF7A05 /* Views */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		2948E6702B7ECC1A00AF7A05 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2948E6712B7ECC1A00AF7A05 /* MVPFeedImageCellViewController.swift */,
+				2948E6722B7ECC1A00AF7A05 /* MVPFeedRefreshViewController.swift */,
+				2948E6732B7ECC1A00AF7A05 /* MVPFeedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2948E6742B7ECC1A00AF7A05 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				2948E6752B7ECC1A00AF7A05 /* MVPFeedUIComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
+		2948E6762B7ECC1A00AF7A05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2948E6772B7ECC1A00AF7A05 /* MVPFeedImageCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2948E6782B7ECC1A00AF7A05 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				2948E6792B7ECC1A00AF7A05 /* MVPFeedImageViewModel.swift */,
+				2948E67A2B7ECC1A00AF7A05 /* MVPFeedPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		29683C642B5715FD00674BD9 /* Helpers */ = {
@@ -522,6 +582,7 @@
 		29F143602B79220000FB6108 /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
+				2948E66F2B7ECBF900AF7A05 /* MVP */,
 				2995B1CC2B7A873D00596EED /* MVC */,
 				2995B1CB2B7A872800596EED /* MVVM */,
 			);
@@ -853,15 +914,22 @@
 			files = (
 				29F143642B79230A00FB6108 /* FeedImageDataLoader.swift in Sources */,
 				2995B1DC2B7A883A00596EED /* MVVMFeedUIComposer.swift in Sources */,
+				2948E67B2B7ECC1B00AF7A05 /* MVPFeedImageCellViewController.swift in Sources */,
 				2995B1DE2B7A884400596EED /* MVVMFeedViewController.swift in Sources */,
+				2948E67D2B7ECC1B00AF7A05 /* MVPFeedViewController.swift in Sources */,
 				29F143662B79249B00FB6108 /* FeedRefreshViewController.swift in Sources */,
 				2948E6322B7EBB1F00AF7A05 /* MVVMFeedImageViewModel.swift in Sources */,
+				2948E67E2B7ECC1B00AF7A05 /* MVPFeedUIComposer.swift in Sources */,
+				2948E67C2B7ECC1B00AF7A05 /* MVPFeedRefreshViewController.swift in Sources */,
+				2948E6812B7ECC1B00AF7A05 /* MVPFeedPresenter.swift in Sources */,
+				2948E67F2B7ECC1B00AF7A05 /* MVPFeedImageCell.swift in Sources */,
 				2948E62F2B7EA65C00AF7A05 /* MVVMFeedViewModel.swift in Sources */,
 				29F1434A2B78E18C00FB6108 /* UIView+Shimmering.swift in Sources */,
 				29F143482B78C43300FB6108 /* FeedViewController.swift in Sources */,
 				2995B1DF2B7A884800596EED /* MVVMFeedRefreshViewController.swift in Sources */,
 				29F143682B793D3200FB6108 /* FeedImageCellViewController.swift in Sources */,
 				29F1436C2B793F4100FB6108 /* FeedUIComposer.swift in Sources */,
+				2948E6802B7ECC1B00AF7A05 /* MVPFeedImageViewModel.swift in Sources */,
 				2995B1DD2B7A884000596EED /* MVVMFeedImageCell.swift in Sources */,
 				2995B1E02B7A884C00596EED /* MVVMFeedImageCellViewController.swift in Sources */,
 				29F143462B78C1A400FB6108 /* FeedImageCell.swift in Sources */,
