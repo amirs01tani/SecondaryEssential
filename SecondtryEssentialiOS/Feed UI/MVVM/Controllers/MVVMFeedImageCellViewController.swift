@@ -11,9 +11,9 @@ import SecondtryEssential
 
 final class MVVMFeedImageCellController {
     
-    private let viewModel: MVVMFeedImageViewModel
+    private let viewModel: MVVMFeedImageViewModel<UIImage>
 
-    init(viewModel: MVVMFeedImageViewModel) {
+    init(viewModel: MVVMFeedImageViewModel<UIImage>) {
         self.viewModel = viewModel
     }
 

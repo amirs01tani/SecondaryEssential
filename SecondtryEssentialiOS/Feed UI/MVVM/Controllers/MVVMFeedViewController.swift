@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import SecondtryEssential
 
 public final class MVVMFeedViewController: UITableViewController {
     private(set) public var refreshController: MVVMFeedRefreshViewController?

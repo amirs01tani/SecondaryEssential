@@ -273,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				2948E6312B7EBB1F00AF7A05 /* MVVMFeedImageViewModel.swift */,
+				2948E62E2B7EA65C00AF7A05 /* MVVMFeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -370,7 +371,6 @@
 				2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */,
 				2995B1D12B7A875B00596EED /* MVVMFeedRefreshViewController.swift */,
 				2995B1D22B7A875B00596EED /* MVVMFeedImageCellViewController.swift */,
-				2948E62E2B7EA65C00AF7A05 /* MVVMFeedViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
