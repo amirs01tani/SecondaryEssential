@@ -9,16 +9,11 @@ import Foundation
 import UIKit
 
 public final class MVPFeedViewController: UITableViewController {
-    private(set) public var refreshController: MVPFeedRefreshViewController?
+    public var refreshController: MVPFeedRefreshViewController?
     var tableModel = [MVPFeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
     private var onViewIsAppearing: ((MVPFeedViewController) -> Void)?
-    
-    public convenience init(refreshController: MVPFeedRefreshViewController) {
-        self.init()
-        self.refreshController = refreshController
-    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()

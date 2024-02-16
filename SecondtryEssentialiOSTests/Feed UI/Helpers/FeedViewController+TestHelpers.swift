@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SecondtryEssentialiOS
 
-extension FeedViewController {
+extension MVPFeedViewController {
     func simulateAppearance() {
         if !isViewLoaded {
             loadViewIfNeeded()

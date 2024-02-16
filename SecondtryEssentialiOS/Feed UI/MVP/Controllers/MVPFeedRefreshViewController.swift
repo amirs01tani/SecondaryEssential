@@ -16,7 +16,7 @@ public class MVPFeedRefreshViewController: NSObject, FeedLoadingView {
     
     private let delegate: FeedRefreshViewControllerDelegate
     
-    private(set) lazy var view = loadView()
+    public lazy var view = loadView()
     init(delegate: FeedRefreshViewControllerDelegate) {
             self.delegate = delegate
         }
