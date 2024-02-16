@@ -55,6 +55,11 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxH-Pf-cdi">
+                                            <rect key="frame" x="24" y="42.333333333333343" width="345" height="345"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                        </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRV-0D-JQf">
                                             <rect key="frame" x="24" y="395.33333333333331" width="347" height="180.66666666666669"/>
                                             <string key="text">descrption descrption descrption descrption descrption descrption descrption descrption descrption v descrption descrption v descrption descrption descrption descrption descrption descrption descrption descrption descrption descrption descrption v descrption descrption v descrption descrption</string>
@@ -65,22 +70,20 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="82G-Kg-BUH" secondAttribute="trailing" constant="24" id="94b-oP-9G0"/>
+                                        <constraint firstItem="fxH-Pf-cdi" firstAttribute="trailing" secondItem="82G-Kg-BUH" secondAttribute="trailing" id="GTR-v9-tUF"/>
                                         <constraint firstItem="DRV-0D-JQf" firstAttribute="top" secondItem="82G-Kg-BUH" secondAttribute="bottom" constant="8" id="Pij-KZ-sOb"/>
                                         <constraint firstItem="vAK-m8-7nk" firstAttribute="leading" secondItem="tH9-fR-hrV" secondAttribute="leading" constant="10" id="Psv-nf-I7d"/>
                                         <constraint firstAttribute="bottom" secondItem="DRV-0D-JQf" secondAttribute="bottom" priority="750" constant="12" id="UlG-tQ-DK1"/>
+                                        <constraint firstItem="fxH-Pf-cdi" firstAttribute="bottom" secondItem="82G-Kg-BUH" secondAttribute="bottom" id="bJS-EU-3e5"/>
                                         <constraint firstItem="DRV-0D-JQf" firstAttribute="leading" secondItem="tH9-fR-hrV" secondAttribute="leading" constant="24" id="bMg-vK-SlH"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DRV-0D-JQf" secondAttribute="trailing" constant="20" symbolic="YES" id="dDe-Td-eFm"/>
                                         <constraint firstItem="82G-Kg-BUH" firstAttribute="leading" secondItem="tH9-fR-hrV" secondAttribute="leading" constant="24" id="jAr-BY-rst"/>
                                         <constraint firstItem="82G-Kg-BUH" firstAttribute="top" secondItem="vAK-m8-7nk" secondAttribute="bottom" constant="12" id="nIK-J5-DEd"/>
+                                        <constraint firstItem="fxH-Pf-cdi" firstAttribute="top" secondItem="82G-Kg-BUH" secondAttribute="top" id="s6f-N0-Foz"/>
                                         <constraint firstItem="vAK-m8-7nk" firstAttribute="top" secondItem="tH9-fR-hrV" secondAttribute="top" constant="10" id="vIH-Lk-QMq"/>
+                                        <constraint firstItem="fxH-Pf-cdi" firstAttribute="leading" secondItem="82G-Kg-BUH" secondAttribute="leading" id="zk9-nV-TdQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="descriptionLabel" destination="DRV-0D-JQf" id="8Hv-Lg-ijq"/>
-                                    <outlet property="feedImageView" destination="82G-Kg-BUH" id="1HU-Fk-9Dj"/>
-                                    <outlet property="locationContainer" destination="vAK-m8-7nk" id="H74-Bb-W4D"/>
-                                    <outlet property="locationLabel" destination="X5v-uI-OES" id="9OL-89-VpT"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -110,6 +113,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="pin" width="10" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
