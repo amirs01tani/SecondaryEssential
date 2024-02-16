@@ -17,7 +17,7 @@
 		2948E67D2B7ECC1B00AF7A05 /* MVPFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6732B7ECC1A00AF7A05 /* MVPFeedViewController.swift */; };
 		2948E67E2B7ECC1B00AF7A05 /* MVPFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6752B7ECC1A00AF7A05 /* MVPFeedUIComposer.swift */; };
 		2948E67F2B7ECC1B00AF7A05 /* MVPFeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6772B7ECC1A00AF7A05 /* MVPFeedImageCell.swift */; };
-		2948E6802B7ECC1B00AF7A05 /* MVPFeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6792B7ECC1A00AF7A05 /* MVPFeedImageViewModel.swift */; };
+		2948E6802B7ECC1B00AF7A05 /* MVPFeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E6792B7ECC1A00AF7A05 /* MVPFeedImagePresenter.swift */; };
 		2948E6812B7ECC1B00AF7A05 /* MVPFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948E67A2B7ECC1A00AF7A05 /* MVPFeedPresenter.swift */; };
 		295407B72B06801A0016DF22 /* URLProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295407B62B06801A0016DF22 /* URLProtocolTests.swift */; };
 		295407B92B0684690016DF22 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295407B82B0684690016DF22 /* URLSessionHTTPClient.swift */; };
@@ -162,7 +162,7 @@
 		2948E6732B7ECC1A00AF7A05 /* MVPFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedViewController.swift; sourceTree = "<group>"; };
 		2948E6752B7ECC1A00AF7A05 /* MVPFeedUIComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedUIComposer.swift; sourceTree = "<group>"; };
 		2948E6772B7ECC1A00AF7A05 /* MVPFeedImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedImageCell.swift; sourceTree = "<group>"; };
-		2948E6792B7ECC1A00AF7A05 /* MVPFeedImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedImageViewModel.swift; sourceTree = "<group>"; };
+		2948E6792B7ECC1A00AF7A05 /* MVPFeedImagePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedImagePresenter.swift; sourceTree = "<group>"; };
 		2948E67A2B7ECC1A00AF7A05 /* MVPFeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPFeedPresenter.swift; sourceTree = "<group>"; };
 		295407B62B06801A0016DF22 /* URLProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolTests.swift; sourceTree = "<group>"; };
 		295407B82B0684690016DF22 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 		2948E6782B7ECC1A00AF7A05 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				2948E6792B7ECC1A00AF7A05 /* MVPFeedImageViewModel.swift */,
+				2948E6792B7ECC1A00AF7A05 /* MVPFeedImagePresenter.swift */,
 				2948E67A2B7ECC1A00AF7A05 /* MVPFeedPresenter.swift */,
 			);
 			path = Presenters;
@@ -929,7 +929,7 @@
 				2995B1DF2B7A884800596EED /* MVVMFeedRefreshViewController.swift in Sources */,
 				29F143682B793D3200FB6108 /* FeedImageCellViewController.swift in Sources */,
 				29F1436C2B793F4100FB6108 /* FeedUIComposer.swift in Sources */,
-				2948E6802B7ECC1B00AF7A05 /* MVPFeedImageViewModel.swift in Sources */,
+				2948E6802B7ECC1B00AF7A05 /* MVPFeedImagePresenter.swift in Sources */,
 				2995B1DD2B7A884000596EED /* MVVMFeedImageCell.swift in Sources */,
 				2995B1E02B7A884C00596EED /* MVVMFeedImageCellViewController.swift in Sources */,
 				29F143462B78C1A400FB6108 /* FeedImageCell.swift in Sources */,
