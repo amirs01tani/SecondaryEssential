@@ -21,13 +21,13 @@ extension MVPFeedViewController {
     
     func replaceRefreshControlWithFakeForiOS17Support() {
         let fakeRefreshControl = FakeRefreshControl()
-
+        
         refreshControl?.allTargets.forEach { target in
             refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
                 fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
             }
         }
-
+        
         refreshControl = fakeRefreshControl
         refreshController?.view = fakeRefreshControl
     }
@@ -59,12 +59,14 @@ extension MVPFeedViewController {
         return feedImageView(at: index) as? FeedImageCell
     }
     
-    func simulateFeedImageViewNotVisible(at row: Int) {
+    @discardableResult
+    func simulateFeedImageViewNotVisible(at row: Int) -> FeedImageCell? {
         let view = simulateFeedImageViewVisible(at: row)
         
         let delegate = tableView.delegate
         let index = IndexPath(row: row, section: feedImagesSection)
         delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
+        return view
     }
     
     func simulateFeedImageViewNearVisible(at row: Int) {
@@ -79,5 +81,9 @@ extension MVPFeedViewController {
         let index = IndexPath(row: row, section: feedImagesSection)
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
-
+    
+    private func anyImageData() -> Data {
+        return UIImage.make(withColor: .red).pngData()!
+    }
 }
+

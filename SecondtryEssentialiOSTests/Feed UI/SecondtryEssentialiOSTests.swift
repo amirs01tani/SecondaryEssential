@@ -82,7 +82,7 @@ final class FeedViewControllerTests: XCTestCase {
         sut.simulateUserInitiatedFeedReload()
         XCTAssertEqual(loader.loadFeedCallCount, 3, "Expected yet another loading request once user initiates another reload")
     }
-        
+    
     func test_loadingFeedIndicator_isVisibleWhileLoadingFeed() {
         let (sut, loader) = makeSUT()
         
@@ -293,15 +293,26 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.cancelledImageURLs, [image0.url, image1.url], "Expected second cancelled image URL request once second image is not near visible anymore")
     }
     
+    func test_feedImageView_doesNotRenderLoadedImageWhenNotVisibleAnymore() {
+        let (sut, loader) = makeSUT()
+        sut.simulateAppearance()
+        loader.completeFeedLoading(with: [makeImage()])
+        
+        let view = sut.simulateFeedImageViewNotVisible(at: 0)
+        loader.completeImageLoading(with: anyImageData())
+        
+        XCTAssertNil(view?.renderedImage, "Expected no rendered image when an image load finishes after the view is not visible anymore")
+    }
+    
     // MARK: - Healpers
     
-//    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
-//        let loader = LoaderSpy()
-//        let sut = FeedUIComposer.feedComposedWith(feedLoader: loader, imageLoader: loader)
-//        trackForMemoryLeaks(loader, file: file, line: line)
-//        trackForMemoryLeaks(sut, file: file, line: line)
-//        return (sut, loader)
-//    }
+    //    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
+    //        let loader = LoaderSpy()
+    //        let sut = FeedUIComposer.feedComposedWith(feedLoader: loader, imageLoader: loader)
+    //        trackForMemoryLeaks(loader, file: file, line: line)
+    //        trackForMemoryLeaks(sut, file: file, line: line)
+    //        return (sut, loader)
+    //    }
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: MVPFeedViewController, loader: LoaderSpy) {
         let loader = LoaderSpy()
@@ -317,6 +328,8 @@ final class FeedViewControllerTests: XCTestCase {
         return FeedImage(id: UUID(), description: description, location: location, imageURL: url)
     }
     
-    
+    private func anyImageData() -> Data {
+        return UIImage.make(withColor: .red).pngData()!
+    }
     
 }
