@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public final class MVPFeedViewController: UITableViewController {
-    public var refreshController: MVPFeedRefreshViewController?
+    @IBOutlet public var refreshController: MVPFeedRefreshViewController?
     var tableModel = [MVPFeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
@@ -18,7 +18,6 @@ public final class MVPFeedViewController: UITableViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         tableView.prefetchDataSource = self
-        refreshControl = refreshController?.view
         onViewIsAppearing = { vc in
             vc.onViewIsAppearing = nil
             vc.refreshController?.refresh()

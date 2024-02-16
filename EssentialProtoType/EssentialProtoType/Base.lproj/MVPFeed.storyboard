@@ -91,10 +91,20 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yrT-VT-7jR">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="TPd-eC-vO0" eventType="valueChanged" id="Vam-HR-v64"/>
+                        </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="refreshController" destination="TPd-eC-vO0" id="awE-j7-fvT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhp-z0-VJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="TPd-eC-vO0" customClass="MVPFeedRefreshViewController"/>
+                <customObject id="TPd-eC-vO0" customClass="MVPFeedRefreshViewController" customModule="SecondtryEssentialiOS" customModuleProvider="target">
+                    <connections>
+                        <outlet property="view" destination="yrT-VT-7jR" id="3cM-ld-jQe"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="773.28244274809163" y="12.67605633802817"/>
         </scene>
