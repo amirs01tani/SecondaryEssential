@@ -58,6 +58,8 @@
 		29CAE6FE2AF3A50C0015AA80 /* SecondtryEssentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CAE6FD2AF3A50C0015AA80 /* SecondtryEssentialTests.swift */; };
 		29CAE6FF2AF3A50C0015AA80 /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; };
 		29E16BA72B59C79700936FC4 /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E16BA62B59C79600936FC4 /* CodableFeedStoreTests.swift */; };
+		29E5883D2B7FC9A70026A882 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5883C2B7FC9A70026A882 /* UITableView+Dequeueing.swift */; };
+		29E5883F2B7FCAB00026A882 /* UIImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5883E2B7FCAB00026A882 /* UIImageView+Animation.swift */; };
 		29F143292B755E3300FB6108 /* SecondtryEssentialiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F143212B755E3300FB6108 /* SecondtryEssentialiOS.framework */; };
 		29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */; };
 		29F1433A2B7564EF00FB6108 /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; platformFilter = ios; };
@@ -205,6 +207,8 @@
 		29CAE6FB2AF3A50C0015AA80 /* SecondtryEssentialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondtryEssentialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAE6FD2AF3A50C0015AA80 /* SecondtryEssentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondtryEssentialTests.swift; sourceTree = "<group>"; };
 		29E16BA62B59C79600936FC4 /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
+		29E5883C2B7FC9A70026A882 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
+		29E5883E2B7FCAB00026A882 /* UIImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animation.swift"; sourceTree = "<group>"; };
 		29F143212B755E3300FB6108 /* SecondtryEssentialiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SecondtryEssentialiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F143282B755E3300FB6108 /* SecondtryEssentialiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondtryEssentialiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondtryEssentialiOSTests.swift; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				2948E6772B7ECC1A00AF7A05 /* MVPFeedImageCell.swift */,
+				29E5883E2B7FCAB00026A882 /* UIImageView+Animation.swift */,
+				29E5883C2B7FC9A70026A882 /* UITableView+Dequeueing.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -926,7 +932,9 @@
 				2995B1DE2B7A884400596EED /* MVVMFeedViewController.swift in Sources */,
 				2948E67D2B7ECC1B00AF7A05 /* MVPFeedViewController.swift in Sources */,
 				29F143662B79249B00FB6108 /* FeedRefreshViewController.swift in Sources */,
+				29E5883F2B7FCAB00026A882 /* UIImageView+Animation.swift in Sources */,
 				2948E6322B7EBB1F00AF7A05 /* MVVMFeedImageViewModel.swift in Sources */,
+				29E5883D2B7FC9A70026A882 /* UITableView+Dequeueing.swift in Sources */,
 				2948E67E2B7ECC1B00AF7A05 /* MVPFeedUIComposer.swift in Sources */,
 				2948E67C2B7ECC1B00AF7A05 /* MVPFeedRefreshViewController.swift in Sources */,
 				2948E6812B7ECC1B00AF7A05 /* MVPFeedPresenter.swift in Sources */,
