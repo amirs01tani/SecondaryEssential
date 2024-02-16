@@ -25,24 +25,21 @@ protocol FeedView {
 }
 
 final class MVPFeedPresenter {
-    typealias Observer<T> = (T) -> Void
+    
+    func didStartLoadingFeed() {
+        loadingView?.display(FeedLoadingViewModel(isLoading: true))
+    }
+    
+    func didFinishLoadingFeed(with feed: [FeedImage]) {
+        feedView?.display(FeedViewModel(feed: feed))
+        loadingView?.display(FeedLoadingViewModel(isLoading: false))
+    }
 
-    private let feedLoader: FeedLoader
-
-    init(feedLoader: FeedLoader) {
-        self.feedLoader = feedLoader
+    func didFinishLoadingFeed(with error: Error) {
+        loadingView?.display(FeedLoadingViewModel(isLoading: false))
     }
 
     var feedView: FeedView?
     var loadingView: FeedLoadingView?
 
-    func loadFeed() {
-        loadingView?.display(FeedLoadingViewModel(isLoading: true))
-        feedLoader.load { [weak self] result in
-            if let feed = try? result.get() {
-                self?.feedView?.display(FeedViewModel(feed: feed))
-            }
-            self?.loadingView?.display(FeedLoadingViewModel(isLoading: false))
-        }
-    }
 }
