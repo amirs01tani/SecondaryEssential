@@ -39,7 +39,7 @@ public class LocalFeedLoader: FeedLoader {
             switch data {
             case .failure(let error):
                 completion(.failure(error))
-            case let .success(.some(cache)) where CachePolicy.validate(cache.timestamp, against: currentDate()):
+            case let .success(.some(cache)) where FeedCachePolicy.validate(cache.timestamp, against: currentDate()):
                 completion(.success(cache.feed.toModels()))
             case .success:
                 completion(.success([]))
