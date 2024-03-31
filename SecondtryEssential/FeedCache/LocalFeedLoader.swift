@@ -7,73 +7,92 @@
 
 import Foundation
 
-public class LocalFeedLoader: FeedLoader {
+public final class LocalFeedLoader {
+    private let store: FeedStore
+    private let currentDate: () -> Date
     
-    public let store: FeedStore
-    public let currentDate: () -> Date
-    
-    public typealias SaveResult = Result<Void, Error>
-    public typealias LoadResult = FeedLoader.Result
-    
-    public init(store: FeedStore, currentDate: @escaping () -> Date){
+    public init(store: FeedStore, currentDate: @escaping () -> Date) {
         self.store = store
         self.currentDate = currentDate
     }
-    
-    public func save(_ items: [FeedImage], completion: @escaping (SaveResult) -> Void) {
-        store.deleteCachedFeed() { [weak self] deletionResult in
-            guard let self else { return }
+}
+
+extension LocalFeedLoader {
+    public typealias SaveResult = Result<Void, Error>
+
+    public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
+        store.deleteCachedFeed { [weak self] deletionResult in
+            guard let self = self else { return }
+            
             switch deletionResult {
             case .success:
-                self.cache(items, completion: completion)
-                
+                self.cache(feed, with: completion)
+            
             case let .failure(error):
                 completion(.failure(error))
             }
         }
     }
     
-    public func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        store.retrieve { [weak self] data in
-            guard let self else { return }
-            switch data {
-            case .failure(let error):
+    private func cache(_ feed: [FeedImage], with completion: @escaping (SaveResult) -> Void) {
+        store.insert(feed.toLocal(), timestamp: currentDate()) { [weak self] insertionResult in
+            guard self != nil else { return }
+            
+            completion(insertionResult)
+        }
+    }
+}
+
+extension LocalFeedLoader: FeedLoader {
+    public typealias LoadResult = FeedLoader.Result
+
+    public func load(completion: @escaping (LoadResult) -> Void) {
+        store.retrieve { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case let .failure(error):
                 completion(.failure(error))
-            case let .success(.some(cache)) where FeedCachePolicy.validate(cache.timestamp, against: currentDate()):
+
+            case let .success(.some(cache)) where FeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
                 completion(.success(cache.feed.toModels()))
+                
             case .success:
                 completion(.success([]))
             }
         }
     }
-    
-    public func validateCache() {
-        store.retrieve() { [weak self] result in
+}
+
+extension LocalFeedLoader {
+    public typealias ValidationResult = Result<Void, Error>
+
+    public func validateCache(completion: @escaping (ValidationResult) -> Void) {
+        store.retrieve { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .failure:
-                self?.store.deleteCachedFeed() { _ in }
-            default:
-                break
+                self.store.deleteCachedFeed(completion: completion)
+                
+            case let .success(.some(cache)) where !FeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
+                self.store.deleteCachedFeed(completion: completion)
+                
+            case .success:
+                completion(.success(()))
             }
         }
-    }
-    
-    public func cache(_ items: [FeedImage], completion: @escaping (SaveResult) -> Void) {
-        self.store.insert(items.toLocal(), timestamp: self.currentDate(), completion: { insertionResult in
-            completion(insertionResult)
-        })
     }
 }
 
 private extension Array where Element == FeedImage {
-    func toLocal() -> [LocalFeedItem] {
-        return map { LocalFeedItem(id: $0.id, description: $0.description, location: $0.location,
-                                   imageURL: $0.url) }
+    func toLocal() -> [LocalFeedImage] {
+        return map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
     }
 }
 
-private extension Array where Element == LocalFeedItem {
+private extension Array where Element == LocalFeedImage {
     func toModels() -> [FeedImage] {
-        return map { FeedImage(id: $0.id, description: $0.description, location: $0.location, imageURL: $0.imageURL) }
+        return map { FeedImage(id: $0.id, description: $0.description, location: $0.location, imageURL: $0.url) }
     }
 }

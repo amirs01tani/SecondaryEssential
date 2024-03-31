@@ -24,10 +24,9 @@ var uniqueItem: FeedImage {
     return FeedImage(id: UUID.init(), imageURL: anyURL())
 }
 
-func uniqueItems() -> (models: [FeedImage], local: [LocalFeedItem]) {
+func uniqueItems() -> (models: [FeedImage], local: [LocalFeedImage]) {
     let models = [uniqueItem, uniqueItem]
     let
-    local = models.map { LocalFeedItem(id: $0.id, description: $0.description, location:
-                                        $0.location, imageURL: $0.url) }
+    local = models.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
     return (models, local)
 }

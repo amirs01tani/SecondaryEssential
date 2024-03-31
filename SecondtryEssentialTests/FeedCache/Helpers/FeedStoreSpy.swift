@@ -8,61 +8,59 @@
 import Foundation
 import SecondtryEssential
 
-public class FeedStoreSpy: FeedStore {
-    
+class FeedStoreSpy: FeedStore {
     enum ReceivedMessage: Equatable {
         case deleteCachedFeed
-        case insert([LocalFeedItem], Date)
+        case insert([LocalFeedImage], Date)
         case retrieve
     }
     
     private(set) var receivedMessages = [ReceivedMessage]()
     
-    public var deletionCompletions = [DeletionCompletion]()
-    public var insertCompletions = [InsertionCompletion]()
-    public var retrivalCompletions = [RetrieveCompletion]()
+    private var deletionCompletions = [DeletionCompletion]()
+    private var insertionCompletions = [InsertionCompletion]()
+    private var retrievalCompletions = [RetrievalCompletion]()
     
-    public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
+    func deleteCachedFeed(completion: @escaping DeletionCompletion) {
         deletionCompletions.append(completion)
         receivedMessages.append(.deleteCachedFeed)
     }
     
-    public func completeDeletion(with error: Error, at index: Int = 0) {
+    func completeDeletion(with error: Error, at index: Int = 0) {
         deletionCompletions[index](.failure(error))
     }
     
-    public func completeDeletionSuccessfully(at index: Int = 0) {
+    func completeDeletionSuccessfully(at index: Int = 0) {
         deletionCompletions[index](.success(()))
     }
     
-    public func insert(_ items: [LocalFeedItem], timestamp: Date, completion: @escaping InsertionCompletion) {
-        receivedMessages.append(.insert(items, timestamp))
-        insertCompletions.append(completion)
+    func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping InsertionCompletion) {
+        insertionCompletions.append(completion)
+        receivedMessages.append(.insert(feed, timestamp))
     }
     
-    public func completeInsertion(with error: Error, at index: Int = 0) {
-        insertCompletions[index](.failure(error))
+    func completeInsertion(with error: Error, at index: Int = 0) {
+        insertionCompletions[index](.failure(error))
     }
     
-    public func completeInsertionSuccessfully(at index: Int = 0) {
-        insertCompletions[index](.success(()))
+    func completeInsertionSuccessfully(at index: Int = 0) {
+        insertionCompletions[index](.success(()))
     }
     
-    public func retrieve(completion: @escaping RetrieveCompletion) {
-        retrivalCompletions.append(completion)
+    func retrieve(completion: @escaping RetrievalCompletion) {
+        retrievalCompletions.append(completion)
         receivedMessages.append(.retrieve)
     }
     
-    public func completeRetrieval(with error: Error, at index: Int = 0) {
-        retrivalCompletions[index](.failure(error))
+    func completeRetrieval(with error: Error, at index: Int = 0) {
+        retrievalCompletions[index](.failure(error))
     }
     
-    public func completeRetrievalWithEmptyCache(at index: Int = 0) {
-        retrivalCompletions[index](.success(.none))
+    func completeRetrievalWithEmptyCache(at index: Int = 0) {
+        retrievalCompletions[index](.success(.none))
     }
     
-    public func completeRetrieval(with data: [LocalFeedItem], timeStamp: Date, at index: Int = 0) {
-        retrivalCompletions[index](.success(CachedFeed(feed: data, timestamp: timeStamp)))
+    func completeRetrieval(with feed: [LocalFeedImage], timestamp: Date, at index: Int = 0) {
+        retrievalCompletions[index](.success(CachedFeed(feed: feed, timestamp: timestamp)))
     }
-    
 }
