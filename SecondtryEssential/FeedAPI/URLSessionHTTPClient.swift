@@ -7,39 +7,36 @@
 
 import Foundation
 
-public class URLSessionHTTPClient: HTTPClient {
-    
+public final class URLSessionHTTPClient: HTTPClient {
     private let session: URLSession
-    public init(session: URLSession = .shared) {
+    
+    public init(session: URLSession) {
         self.session = session
     }
-    private struct UnexpectedError: Error {}
     
-    public func get(from URL: URL, completion: @escaping (Result<(HTTPURLResponse, Data), Error>) -> Void) {
+    private struct UnexpectedValuesRepresentation: Error {}
+    
+    private struct URLSessionTaskWrapper: HTTPClientTask {
+        let wrapped: URLSessionTask
         
-        session.dataTask(with: URLRequest(url: URL)) { data, response, error in
-            // MARK: - old school
-            //            if let error = error {
-            //                completion(.failure(error))
-            //            } else if let data = data, let response = response as? HTTPURLResponse {
-            //                completion(.success((response, data)))
-            //            } else {
-            //                completion(.failure(UnexpectedError()))
-            //            }
-            
-            
-            // MARK: - new Result API feature
+        func cancel() {
+            wrapped.cancel()
+        }
+    }
+    
+    public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+        let task = session.dataTask(with: url) { data, response, error in
             completion(Result {
                 if let error = error {
                     throw error
                 } else if let data = data, let response = response as? HTTPURLResponse {
-                    return (response, data)
+                    return (data, response)
                 } else {
                     throw UnexpectedValuesRepresentation()
                 }
             })
-        }.resume()
+        }
+        task.resume()
+        return URLSessionTaskWrapper(wrapped: task)
     }
 }
-
-struct UnexpectedValuesRepresentation: Error {}

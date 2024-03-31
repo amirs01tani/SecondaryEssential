@@ -8,6 +8,10 @@
 import Foundation
 import SecondtryEssential
 
+func anyData() -> Data {
+    return Data("any data".utf8)
+}
+
 func anyURL() -> URL {
     return URL(string: "http://any-url.com")!
 }

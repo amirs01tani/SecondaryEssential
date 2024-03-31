@@ -1,8 +1,8 @@
 //
 //  FeedImageDataLoader.swift
-//  SecondtryEssentialiOS
+//  SecondtryEssential
 //
-//  Created by Amir on 2/11/24.
+//  Created by Amir on 3/31/24.
 //
 
 import Foundation

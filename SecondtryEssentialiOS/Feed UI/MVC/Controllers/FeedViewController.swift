@@ -10,15 +10,17 @@ import UIKit
 import SecondtryEssential
 
 public final class FeedViewController: UITableViewController {
-    private(set) public var refreshController: FeedRefreshViewController?
+    @IBOutlet public var refreshController: MVPFeedRefreshViewController?
+    private(set) public var feedLoader: FeedLoader?
+    var onLoad: (([FeedImage]) -> Void)?
     var tableModel = [FeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
     private var onViewIsAppearing: ((FeedViewController) -> Void)?
     
-    public convenience init(refreshController: FeedRefreshViewController) {
+    public convenience init(feedLoader: FeedLoader) {
         self.init()
-        self.refreshController = refreshController
+        self.feedLoader = feedLoader
     }
     
     public override func viewDidLoad() {

@@ -7,17 +7,6 @@
 
 import Foundation
 
-public protocol FeedLoader {
-    typealias Result = Swift.Result<[FeedImage], Error>
-    func load(completion: @escaping (Result) -> Void)
-}
-
-public protocol HTTPClient {
-    /// The completion handler can be invoked in any thread.
-    /// Clients are responsible to dispatch to appropriate threads, if needed.
-    func get(from URL: URL, completion: @escaping (Result<(HTTPURLResponse, Data), Error>) -> Void)
-}
-
 public class RemoteFeedLoader {
     
     let client: HTTPClient
@@ -28,7 +17,7 @@ public class RemoteFeedLoader {
         case invalidData
     }
     
-    public init(client: HTTPClient, url: URL) {
+    public init(url: URL, client: HTTPClient) {
         self.client = client
         self.url = url
     }
@@ -42,7 +31,7 @@ public class RemoteFeedLoader {
         client.get(from: url, completion: { [weak self] result in
             guard let _ = self else { return }
             switch result {
-            case let .success((response, data)):
+            case let .success((data, response)):
                 completion(RemoteFeedLoader.map(data, from: response))
             case .failure:
                 completion(.failure(.connectivity))
