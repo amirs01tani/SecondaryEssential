@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SecondtryEssential
 
 protocol FeedImageCellControllerDelegate {
     func didRequestImage()
@@ -14,9 +15,8 @@ protocol FeedImageCellControllerDelegate {
 }
 
 final class MVPFeedImageCellController: FeedImageView {
-    
     private let delegate: FeedImageCellControllerDelegate
-    private var cell: FeedImageCell?
+    private var cell: MVPFeedImageCell?
     
     init(delegate: FeedImageCellControllerDelegate) {
         self.delegate = delegate
@@ -28,17 +28,6 @@ final class MVPFeedImageCellController: FeedImageView {
         return cell!
     }
     
-    func display(_ viewModel: MVPFeedImageViewModel<UIImage>) {
-        cell?.locationContainer.isHidden = !viewModel.hasLocation
-        cell?.locationLabel.text = viewModel.location
-        cell?.descriptionLabel.text = viewModel.description
-        cell?.feedImageView.setImageAnimated(viewModel.image)
-        cell?.feedImageContainer.isShimmering = viewModel.isLoading
-        cell?.feedImageRetryButton.isHidden = !viewModel.shouldRetry
-        cell?.onRetry = delegate.didRequestImage
-        
-    }
-    
     func preload() {
         delegate.didRequestImage()
     }
@@ -46,6 +35,16 @@ final class MVPFeedImageCellController: FeedImageView {
     func cancelLoad() {
         releaseCellForReuse()
         delegate.didCancelImageRequest()
+    }
+    
+    func display(_ viewModel: FeedImageViewModel<UIImage>) {
+        cell?.locationContainer.isHidden = !viewModel.hasLocation
+        cell?.locationLabel.text = viewModel.location
+        cell?.descriptionLabel.text = viewModel.description
+        cell?.feedImageView.setImageAnimated(viewModel.image)
+        cell?.feedImageContainer.isShimmering = viewModel.isLoading
+        cell?.feedImageRetryButton.isHidden = !viewModel.shouldRetry
+        cell?.onRetry = delegate.didRequestImage
     }
     
     private func releaseCellForReuse() {

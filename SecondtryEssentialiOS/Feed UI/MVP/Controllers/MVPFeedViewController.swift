@@ -7,29 +7,38 @@
 
 import Foundation
 import UIKit
+import SecondtryEssential
 
-public final class MVPFeedViewController: UITableViewController {
-    @IBOutlet public var refreshController: MVPFeedRefreshViewController?
+protocol FeedViewControllerDelegate {
+    func didRequestFeedRefresh()
+}
+
+public final class MVPFeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
+    var delegate: FeedViewControllerDelegate?
+    @IBOutlet private(set) public var errorView: ErrorView?
+
     var tableModel = [MVPFeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
-    private var onViewIsAppearing: ((MVPFeedViewController) -> Void)?
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.prefetchDataSource = self
-        onViewIsAppearing = { vc in
-            vc.onViewIsAppearing = nil
-            vc.refreshController?.refresh()
-        }
-    }
-    
-    public override func viewIsAppearing(_ animated: Bool) {
-        super.viewIsAppearing(animated)
         
-        onViewIsAppearing?(self)
+        refresh()
     }
     
+    @IBAction private func refresh() {
+        delegate?.didRequestFeedRefresh()
+    }
+    
+    public func display(_ viewModel: FeedLoadingViewModel) {
+        refreshControl?.update(isRefreshing: viewModel.isLoading)
+    }
+    
+    public func display(_ viewModel: FeedErrorViewModel) {
+        errorView?.message = viewModel.message
+    }
+
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableModel.count
     }
@@ -42,19 +51,6 @@ public final class MVPFeedViewController: UITableViewController {
         cancelCellControllerLoad(forRowAt: indexPath)
     }
     
-    private func cellController(forRowAt indexPath: IndexPath) -> MVPFeedImageCellController {
-        let cellModel = tableModel[indexPath.row]
-        
-        return cellModel
-    }
-    
-    private func cancelCellControllerLoad(forRowAt indexPath: IndexPath) {
-        cellController(forRowAt: indexPath).cancelLoad()
-    }
-    
-}
-
-extension MVPFeedViewController: UITableViewDataSourcePrefetching {
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
             cellController(forRowAt: indexPath).preload()
@@ -65,4 +61,11 @@ extension MVPFeedViewController: UITableViewDataSourcePrefetching {
         indexPaths.forEach(cancelCellControllerLoad)
     }
     
+    private func cellController(forRowAt indexPath: IndexPath) -> MVPFeedImageCellController {
+        return tableModel[indexPath.row]
+    }
+    
+    private func cancelCellControllerLoad(forRowAt indexPath: IndexPath) {
+        cellController(forRowAt: indexPath).cancelLoad()
+    }
 }

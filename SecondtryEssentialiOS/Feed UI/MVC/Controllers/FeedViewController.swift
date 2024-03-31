@@ -10,7 +10,7 @@ import UIKit
 import SecondtryEssential
 
 public final class FeedViewController: UITableViewController {
-    @IBOutlet public var refreshController: MVPFeedRefreshViewController?
+    @IBOutlet public var refreshController: FeedRefreshViewController?
     private(set) public var feedLoader: FeedLoader?
     var onLoad: (([FeedImage]) -> Void)?
     var tableModel = [FeedImageCellController]() {

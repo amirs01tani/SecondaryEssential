@@ -10,6 +10,7 @@ import UIKit
 import SecondtryEssential
 
 final class FeedImageCellController {
+    
     private var task: FeedImageDataLoaderTask?
     private let model: FeedImage
     private let imageLoader: FeedImageDataLoader

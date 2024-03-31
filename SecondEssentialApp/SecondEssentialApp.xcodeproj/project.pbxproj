@@ -16,6 +16,10 @@
 		298BF4462BB9A8EF00AAE805 /* SecondEssentialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4452BB9A8EF00AAE805 /* SecondEssentialAppTests.swift */; };
 		298BF4502BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF44F2BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift */; };
 		298BF4522BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4512BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift */; };
+		298BF4612BB9ADDD00AAE805 /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF45F2BB9ADDD00AAE805 /* SecondtryEssential.framework */; };
+		298BF4622BB9ADDD00AAE805 /* SecondtryEssential.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF45F2BB9ADDD00AAE805 /* SecondtryEssential.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		298BF4632BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */; };
+		298BF4642BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		298BF4652BB9ADDD00AAE805 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				298BF4622BB9ADDD00AAE805 /* SecondtryEssential.framework in Embed Frameworks */,
+				298BF4642BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		298BF42B2BB9A8EE00AAE805 /* SecondEssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondEssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298BF42E2BB9A8EE00AAE805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +68,8 @@
 		298BF44B2BB9A8EF00AAE805 /* SecondEssentialAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondEssentialAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298BF44F2BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEssentialAppUITests.swift; sourceTree = "<group>"; };
 		298BF4512BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEssentialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		298BF45F2BB9ADDD00AAE805 /* SecondtryEssential.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SecondtryEssential.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SecondtryEssentialiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298BF4612BB9ADDD00AAE805 /* SecondtryEssential.framework in Frameworks */,
+				298BF4632BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +106,7 @@
 				298BF4442BB9A8EF00AAE805 /* SecondEssentialAppTests */,
 				298BF44E2BB9A8EF00AAE805 /* SecondEssentialAppUITests */,
 				298BF42C2BB9A8EE00AAE805 /* Products */,
+				298BF45E2BB9ADDD00AAE805 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +151,15 @@
 			path = SecondEssentialAppUITests;
 			sourceTree = "<group>";
 		};
+		298BF45E2BB9ADDD00AAE805 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				298BF45F2BB9ADDD00AAE805 /* SecondtryEssential.framework */,
+				298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +170,7 @@
 				298BF4272BB9A8EE00AAE805 /* Sources */,
 				298BF4282BB9A8EE00AAE805 /* Frameworks */,
 				298BF4292BB9A8EE00AAE805 /* Resources */,
+				298BF4652BB9ADDD00AAE805 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
