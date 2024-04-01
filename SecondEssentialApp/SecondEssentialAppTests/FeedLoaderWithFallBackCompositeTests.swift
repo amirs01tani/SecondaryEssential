@@ -36,14 +36,20 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
         let fallbackFeed = uniqueFeed()
         let sut = makeSUT(primaryResult: .success(primaryFeed), fallbackResult: .success(primaryFeed))
         
-        expect(sut: sut, toCompleteWith: .success(primaryFeed))
+        expect(sut, toCompleteWith: .success(primaryFeed))
     }
     
     func test_load_deliversFallbackFeedOnPrimaryLoaderFailure() {
         let fallbackFeed = uniqueFeed()
         let sut = makeSUT(primaryResult: .failure(anyNSError()), fallbackResult: .success(fallbackFeed))
         
-        expect(sut: sut, toCompleteWith: .success(fallbackFeed))
+        expect(sut, toCompleteWith: .success(fallbackFeed))
+    }
+    
+    func test_load_deliversErrorOnBothPrimaryAndFallbackLoaderFailure() {
+        let sut = makeSUT(primaryResult: .failure(anyNSError()), fallbackResult: .failure(anyNSError()))
+        
+        expect(sut, toCompleteWith: .failure(anyNSError()))
     }
     
     private func uniqueFeed() -> [FeedImage] {
@@ -72,7 +78,7 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
         return sut
     }
     
-    func expect(sut: FeedLoader, toCompleteWith expectedResult: FeedLoader.Result, file: StaticString = #file, line: UInt = #line) {
+    func expect(_ sut: FeedLoader, toCompleteWith expectedResult: FeedLoader.Result, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
         
         sut.load { receivedResult in
