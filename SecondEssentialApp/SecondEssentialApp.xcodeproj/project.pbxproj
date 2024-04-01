@@ -27,6 +27,7 @@
 		298BF4922BBB579E00AAE805 /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4912BBB579E00AAE805 /* FeedLoaderCacheDecoratorTests.swift */; };
 		298BF4942BBB57E000AAE805 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4932BBB57E000AAE805 /* Helpers.swift */; };
 		298BF4962BBB58AA00AAE805 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4952BBB58AA00AAE805 /* XCTest+Helpers.swift */; };
+		298BF4982BBB5A1E00AAE805 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4972BBB5A1E00AAE805 /* FeedLoaderStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		298BF4912BBB579E00AAE805 /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		298BF4932BBB57E000AAE805 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		298BF4952BBB58AA00AAE805 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
+		298BF4972BBB5A1E00AAE805 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				298BF48D2BBB27FE00AAE805 /* MemoryLeakTracker.swift */,
 				298BF4932BBB57E000AAE805 /* Helpers.swift */,
 				298BF4952BBB58AA00AAE805 /* XCTest+Helpers.swift */,
+				298BF4972BBB5A1E00AAE805 /* FeedLoaderStub.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298BF48E2BBB27FE00AAE805 /* MemoryLeakTracker.swift in Sources */,
+				298BF4982BBB5A1E00AAE805 /* FeedLoaderStub.swift in Sources */,
 				298BF48B2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				298BF4962BBB58AA00AAE805 /* XCTest+Helpers.swift in Sources */,
 				298BF4462BB9A8EF00AAE805 /* FeedLoaderWithFallBackCompositeTests.swift in Sources */,
