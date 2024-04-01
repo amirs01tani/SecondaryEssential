@@ -22,6 +22,7 @@
 		298BF4642BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		298BF4892BBB257200AAE805 /* FeedLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4882BBB257200AAE805 /* FeedLoaderWithFallbackComposite.swift */; };
 		298BF48B2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF48A2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */; };
+		298BF48E2BBB27FE00AAE805 /* MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF48D2BBB27FE00AAE805 /* MemoryLeakTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		298BF4872BBB1B8900AAE805 /* SecondEssentialApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SecondEssentialApp.xctestplan; path = /Users/amir/Documents/Lead/SecondtryEssential/SecondEssentialApp/SecondEssentialAppTests/SecondEssentialApp.xctestplan; sourceTree = "<absolute>"; };
 		298BF4882BBB257200AAE805 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 		298BF48A2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
+		298BF48D2BBB27FE00AAE805 /* MemoryLeakTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeakTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		298BF4442BB9A8EF00AAE805 /* SecondEssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				298BF48C2BBB27DE00AAE805 /* Shared */,
 				298BF4872BBB1B8900AAE805 /* SecondEssentialApp.xctestplan */,
 				298BF4452BB9A8EF00AAE805 /* FeedLoaderWithFallBackCompositeTests.swift */,
 				298BF48A2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
@@ -166,6 +169,14 @@
 				298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		298BF48C2BBB27DE00AAE805 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				298BF48D2BBB27FE00AAE805 /* MemoryLeakTracker.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298BF48E2BBB27FE00AAE805 /* MemoryLeakTracker.swift in Sources */,
 				298BF48B2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				298BF4462BB9A8EF00AAE805 /* FeedLoaderWithFallBackCompositeTests.swift in Sources */,
 			);
