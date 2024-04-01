@@ -7,27 +7,7 @@
 
 import XCTest
 import SecondtryEssential
-
-class FeedLoaderWithFallbackComposite: FeedLoader {
-    private let primary: FeedLoader
-    private let fallback: FeedLoader
-
-    init(primary: FeedLoader, fallback: FeedLoader) {
-        self.primary = primary
-        self.fallback = fallback
-    }
-
-    func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        primary.load() { [weak self] result in
-            switch result {
-            case .success(let images):
-                completion(.success(images))
-            case .failure( _):
-                self?.fallback.load(completion: completion)
-            }
-        }
-    }
-}
+import SecondEssentialApp
 
 class FeedLoaderWithFallbackCompositeTests: XCTestCase {
     
