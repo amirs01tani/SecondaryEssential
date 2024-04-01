@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "0099FC09-0C4B-4074-95D1-F74148748C79",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SecondEssentialApp.xcodeproj",
+      "identifier" : "298BF42A2BB9A8EE00AAE805",
+      "name" : "SecondEssentialApp"
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SecondEssentialApp.xcodeproj",
+        "identifier" : "298BF4402BB9A8EF00AAE805",
+        "name" : "SecondEssentialAppTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SecondEssentialApp.xcodeproj",
+        "identifier" : "298BF44A2BB9A8EF00AAE805",
+        "name" : "SecondEssentialAppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

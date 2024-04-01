@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:SecondtryEssentialiOS.xctestplan"
+            reference = "container:SecondtryEssentialiOS/SecondtryEssentialiOS.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

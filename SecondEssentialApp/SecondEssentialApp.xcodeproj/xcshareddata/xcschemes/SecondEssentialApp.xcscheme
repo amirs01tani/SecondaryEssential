@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "29C14E912AF3926A00470C52"
-               BuildableName = "SecondtryEssential.framework"
-               BlueprintName = "SecondtryEssential"
-               ReferencedContainer = "container:SecondtryEssential.xcodeproj">
+               BlueprintIdentifier = "298BF42A2BB9A8EE00AAE805"
+               BuildableName = "SecondEssentialApp.app"
+               BlueprintName = "SecondEssentialApp"
+               ReferencedContainer = "container:SecondEssentialApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:SecondtryEssential/SecondtryEssential.xctestplan"
+            reference = "container:SecondEssentialAppTests/SecondEssentialApp.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -39,10 +39,21 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "29CAE6FA2AF3A50C0015AA80"
-               BuildableName = "SecondtryEssentialTests.xctest"
-               BlueprintName = "SecondtryEssentialTests"
-               ReferencedContainer = "container:SecondtryEssential.xcodeproj">
+               BlueprintIdentifier = "298BF4402BB9A8EF00AAE805"
+               BuildableName = "SecondEssentialAppTests.xctest"
+               BlueprintName = "SecondEssentialAppTests"
+               ReferencedContainer = "container:SecondEssentialApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "298BF44A2BB9A8EF00AAE805"
+               BuildableName = "SecondEssentialAppUITests.xctest"
+               BlueprintName = "SecondEssentialAppUITests"
+               ReferencedContainer = "container:SecondEssentialApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,6 +68,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "298BF42A2BB9A8EE00AAE805"
+            BuildableName = "SecondEssentialApp.app"
+            BlueprintName = "SecondEssentialApp"
+            ReferencedContainer = "container:SecondEssentialApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -64,15 +85,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "29C14E912AF3926A00470C52"
-            BuildableName = "SecondtryEssential.framework"
-            BlueprintName = "SecondtryEssential"
-            ReferencedContainer = "container:SecondtryEssential.xcodeproj">
+            BlueprintIdentifier = "298BF42A2BB9A8EE00AAE805"
+            BuildableName = "SecondEssentialApp.app"
+            BlueprintName = "SecondEssentialApp"
+            ReferencedContainer = "container:SecondEssentialApp.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

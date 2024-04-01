@@ -590,9 +590,7 @@
 		29C14E882AF3926A00470C52 = {
 			isa = PBXGroup;
 			children = (
-				29F143362B755F2B00FB6108 /* SecondtryEssentialiOS.xctestplan */,
 				293A614D2B2793A500EF0B5B /* CI.xctestplan */,
-				2981766F2AF3A2A800102779 /* SecondtryEssential.xctestplan */,
 				29C14E942AF3926A00470C52 /* SecondtryEssential */,
 				29CAE6FC2AF3A50C0015AA80 /* SecondtryEssentialTests */,
 				293A61422B2773EC00EF0B5B /* SecondtryEssentialEndToEndTests */,
@@ -620,6 +618,7 @@
 		29C14E942AF3926A00470C52 /* SecondtryEssential */ = {
 			isa = PBXGroup;
 			children = (
+				2981766F2AF3A2A800102779 /* SecondtryEssential.xctestplan */,
 				298BF4732BB9B30C00AAE805 /* Feed Presentation */,
 				29B236712B517D8A00214816 /* FeedAPI */,
 				29B2366E2B517D5A00214816 /* FeedCache */,
@@ -641,6 +640,7 @@
 		29F143222B755E3300FB6108 /* SecondtryEssentialiOS */ = {
 			isa = PBXGroup;
 			children = (
+				29F143362B755F2B00FB6108 /* SecondtryEssentialiOS.xctestplan */,
 				29F143602B79220000FB6108 /* Feed UI */,
 			);
 			path = SecondtryEssentialiOS;
