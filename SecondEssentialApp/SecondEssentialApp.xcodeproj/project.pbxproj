@@ -29,6 +29,7 @@
 		298BF4962BBB58AA00AAE805 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4952BBB58AA00AAE805 /* XCTest+Helpers.swift */; };
 		298BF4982BBB5A1E00AAE805 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4972BBB5A1E00AAE805 /* FeedLoaderStub.swift */; };
 		298BF49A2BBB617600AAE805 /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4992BBB617600AAE805 /* FeedLoaderCacheDecorator.swift */; };
+		298BF49E2BBB637600AAE805 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF49D2BBB637600AAE805 /* FeedImageDataLoaderCacheDecoratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		298BF4952BBB58AA00AAE805 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
 		298BF4972BBB5A1E00AAE805 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		298BF4992BBB617600AAE805 /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
+		298BF49D2BBB637600AAE805 /* FeedImageDataLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				298BF4452BB9A8EF00AAE805 /* FeedLoaderWithFallBackCompositeTests.swift */,
 				298BF48A2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 				298BF4912BBB579E00AAE805 /* FeedLoaderCacheDecoratorTests.swift */,
+				298BF49D2BBB637600AAE805 /* FeedImageDataLoaderCacheDecoratorTests.swift */,
 			);
 			path = SecondEssentialAppTests;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				298BF48E2BBB27FE00AAE805 /* MemoryLeakTracker.swift in Sources */,
+				298BF49E2BBB637600AAE805 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */,
 				298BF4982BBB5A1E00AAE805 /* FeedLoaderStub.swift in Sources */,
 				298BF48B2BBB260C00AAE805 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				298BF4962BBB58AA00AAE805 /* XCTest+Helpers.swift in Sources */,
