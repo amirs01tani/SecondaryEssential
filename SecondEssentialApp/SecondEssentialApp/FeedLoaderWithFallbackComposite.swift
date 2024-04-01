@@ -12,7 +12,7 @@ public class FeedLoaderWithFallbackComposite: FeedLoader {
     private let primary: FeedLoader
     private let fallback: FeedLoader
 
-    init(primary: FeedLoader, fallback: FeedLoader) {
+    public init(primary: FeedLoader, fallback: FeedLoader) {
         self.primary = primary
         self.fallback = fallback
     }
