@@ -7,38 +7,7 @@
 
 import XCTest
 import SecondtryEssential
-
-
-protocol FeedCache {
-    typealias Result = Swift.Result<Void, Error>
-
-    func save(_ feed: [FeedImage], completion: @escaping (Result) -> Void)
-}
-
-final class FeedLoaderCacheDecorator: FeedLoader {
-    private let decoratee: FeedLoader
-    let cache: FeedCache
-    
-    init(decoratee: FeedLoader, cache: FeedCache) {
-        self.decoratee = decoratee
-        self.cache = cache
-    }
-    
-    func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        decoratee.load { [weak self] result in
-// mapping
-            completion(result.map { feed in
-                self?.cache.save(feed) { _ in }
-                return feed
-            })
-// if/try
-//            if let result = try? result.get() {
-//                self?.cache.save(result) { _ in }
-//            }
-//            completion(result)
-        }
-    }
-}
+import SecondEssentialApp
 
 class FeedLoaderCacheDecoratorTests: XCTestCase, FeedLoaderTestCase {
 

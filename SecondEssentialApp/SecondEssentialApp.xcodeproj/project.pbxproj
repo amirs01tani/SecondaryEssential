@@ -28,6 +28,7 @@
 		298BF4942BBB57E000AAE805 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4932BBB57E000AAE805 /* Helpers.swift */; };
 		298BF4962BBB58AA00AAE805 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4952BBB58AA00AAE805 /* XCTest+Helpers.swift */; };
 		298BF4982BBB5A1E00AAE805 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4972BBB5A1E00AAE805 /* FeedLoaderStub.swift */; };
+		298BF49A2BBB617600AAE805 /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4992BBB617600AAE805 /* FeedLoaderCacheDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		298BF4932BBB57E000AAE805 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		298BF4952BBB58AA00AAE805 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
 		298BF4972BBB5A1E00AAE805 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
+		298BF4992BBB617600AAE805 /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				298BF4322BB9A8EE00AAE805 /* ViewController.swift */,
 				298BF4882BBB257200AAE805 /* FeedLoaderWithFallbackComposite.swift */,
 				298BF48F2BBB366E00AAE805 /* FeedImageDataLoaderWithFallbackComposite.swift */,
+				298BF4992BBB617600AAE805 /* FeedLoaderCacheDecorator.swift */,
 				298BF4342BB9A8EE00AAE805 /* Main.storyboard */,
 				298BF4372BB9A8EF00AAE805 /* Assets.xcassets */,
 				298BF4392BB9A8EF00AAE805 /* LaunchScreen.storyboard */,
@@ -330,6 +333,7 @@
 				298BF42F2BB9A8EE00AAE805 /* AppDelegate.swift in Sources */,
 				298BF4892BBB257200AAE805 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				298BF4312BB9A8EE00AAE805 /* SceneDelegate.swift in Sources */,
+				298BF49A2BBB617600AAE805 /* FeedLoaderCacheDecorator.swift in Sources */,
 				298BF4902BBB366E00AAE805 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
