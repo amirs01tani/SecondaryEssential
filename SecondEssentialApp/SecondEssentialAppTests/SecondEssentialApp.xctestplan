@@ -24,14 +24,6 @@
         "identifier" : "298BF4402BB9A8EF00AAE805",
         "name" : "SecondEssentialAppTests"
       }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:SecondEssentialApp.xcodeproj",
-        "identifier" : "298BF44A2BB9A8EF00AAE805",
-        "name" : "SecondEssentialAppUITests"
-      }
     }
   ],
   "version" : 1
