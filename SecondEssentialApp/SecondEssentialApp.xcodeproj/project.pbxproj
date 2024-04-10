@@ -14,8 +14,6 @@
 		298BF4382BB9A8EF00AAE805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298BF4372BB9A8EF00AAE805 /* Assets.xcassets */; };
 		298BF43B2BB9A8EF00AAE805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298BF4392BB9A8EF00AAE805 /* LaunchScreen.storyboard */; };
 		298BF4462BB9A8EF00AAE805 /* FeedLoaderWithFallBackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4452BB9A8EF00AAE805 /* FeedLoaderWithFallBackCompositeTests.swift */; };
-		298BF4502BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF44F2BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift */; };
-		298BF4522BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4512BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift */; };
 		298BF4612BB9ADDD00AAE805 /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF45F2BB9ADDD00AAE805 /* SecondtryEssential.framework */; };
 		298BF4622BB9ADDD00AAE805 /* SecondtryEssential.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF45F2BB9ADDD00AAE805 /* SecondtryEssential.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		298BF4632BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */; };
@@ -33,6 +31,7 @@
 		298BF4DC2BBBF61F00AAE805 /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4DB2BBBF61F00AAE805 /* FeedImageDataLoaderSpy.swift */; };
 		298BF4DE2BBBF69000AAE805 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4DD2BBBF69000AAE805 /* XCTestCase+FeedImageDataLoader.swift */; };
 		298BF4E02BBBFC3100AAE805 /* FeedImageDataLoaderDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF4DF2BBBFC3100AAE805 /* FeedImageDataLoaderDecorator.swift */; };
+		2992E3012BC70A1200F5F76A /* SecondEssentialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BF44F2BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +79,6 @@
 		298BF4452BB9A8EF00AAE805 /* FeedLoaderWithFallBackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallBackCompositeTests.swift; sourceTree = "<group>"; };
 		298BF44B2BB9A8EF00AAE805 /* SecondEssentialAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondEssentialAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298BF44F2BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEssentialAppUITests.swift; sourceTree = "<group>"; };
-		298BF4512BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEssentialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		298BF45F2BB9ADDD00AAE805 /* SecondtryEssential.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SecondtryEssential.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		298BF4602BB9ADDD00AAE805 /* SecondtryEssentialiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SecondtryEssentialiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		298BF4872BBB1B8900AAE805 /* SecondEssentialApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SecondEssentialApp.xctestplan; path = /Users/amir/Documents/Lead/SecondtryEssential/SecondEssentialApp/SecondEssentialAppTests/SecondEssentialApp.xctestplan; sourceTree = "<absolute>"; };
@@ -97,6 +95,7 @@
 		298BF4DB2BBBF61F00AAE805 /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 		298BF4DD2BBBF69000AAE805 /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		298BF4DF2BBBFC3100AAE805 /* FeedImageDataLoaderDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderDecorator.swift; sourceTree = "<group>"; };
+		2992E3042BC70AB300F5F76A /* SecondEssentialAppUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = SecondEssentialAppUITests.xctestplan; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				298BF44F2BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift */,
-				298BF4512BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift */,
+				2992E3042BC70AB300F5F76A /* SecondEssentialAppUITests.xctestplan */,
 			);
 			path = SecondEssentialAppUITests;
 			sourceTree = "<group>";
@@ -372,8 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298BF4502BB9A8EF00AAE805 /* SecondEssentialAppUITests.swift in Sources */,
-				298BF4522BB9A8EF00AAE805 /* SecondEssentialAppUITestsLaunchTests.swift in Sources */,
+				2992E3012BC70A1200F5F76A /* SecondEssentialAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
