@@ -46,6 +46,7 @@
 		2992E3282BC8197200F5F76A /* FeedImageCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3272BC8197200F5F76A /* FeedImageCell+TestHelpers.swift */; };
 		2992E32C2BC819F600F5F76A /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E32B2BC819F600F5F76A /* UIButton+TestHelpers.swift */; };
 		2992E32F2BC821C900F5F76A /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E32E2BC821C900F5F76A /* HTTPClientStub.swift */; };
+		2992E3312BC8223C00F5F76A /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3302BC8223C00F5F76A /* InMemoryFeedStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		2992E3272BC8197200F5F76A /* FeedImageCell+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FeedImageCell+TestHelpers.swift"; path = "../../../SecondtryEssentialiOSTests/Feed UI/Helpers/FeedImageCell+TestHelpers.swift"; sourceTree = "<group>"; };
 		2992E32B2BC819F600F5F76A /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 		2992E32E2BC821C900F5F76A /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
+		2992E3302BC8223C00F5F76A /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				2992E32E2BC821C900F5F76A /* HTTPClientStub.swift */,
+				2992E3302BC8223C00F5F76A /* InMemoryFeedStore.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				2992E32F2BC821C900F5F76A /* HTTPClientStub.swift in Sources */,
 				2992E31A2BC8148B00F5F76A /* FeedAcceptanceTests.swift in Sources */,
 				298BF4922BBB579E00AAE805 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
+				2992E3312BC8223C00F5F76A /* InMemoryFeedStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
