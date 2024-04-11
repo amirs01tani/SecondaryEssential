@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SecondtryEssentialiOS
 
-extension FeedImageCell {
+extension MVPFeedImageCell {
     var isShowingLocation: Bool {
         return !locationContainer.isHidden
     }
