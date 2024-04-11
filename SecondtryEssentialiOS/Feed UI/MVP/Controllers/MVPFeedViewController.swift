@@ -16,7 +16,7 @@ public protocol FeedViewControllerDelegate {
 public final class MVPFeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
     public var delegate: FeedViewControllerDelegate?
     @IBOutlet private(set) public var errorView: ErrorView?
-
+    private var onViewIsAppearing: ((MVPFeedViewController) -> Void)?
     public var tableModel = [MVPFeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
@@ -24,7 +24,16 @@ public final class MVPFeedViewController: UITableViewController, UITableViewData
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        refresh()
+        onViewIsAppearing = { vc in
+            vc.onViewIsAppearing = nil
+            vc.refresh()
+        }
+    }
+    
+    public override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        
+        onViewIsAppearing?(self)
     }
     
     @IBAction private func refresh() {

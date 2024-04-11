@@ -24,7 +24,7 @@ extension FeedViewControllerTests {
     func assertThat(_ sut: MVPFeedViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #file, line: UInt = #line) {
         let view = sut.feedImageView(at: index)
         
-        guard let cell = view as? FeedImageCell else {
+        guard let cell = view as? MVPFeedImageCell else {
             return XCTFail("Expected \(FeedImageCell.self) instance, got \(String(describing: view)) instead", file: file, line: line)
         }
         

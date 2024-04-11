@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "6979B768-0939-4C64-9A7F-302A136A0DE6",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SecondtryEssential.xcodeproj",
+        "identifier" : "29F143272B755E3300FB6108",
+        "name" : "SecondtryEssentialiOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

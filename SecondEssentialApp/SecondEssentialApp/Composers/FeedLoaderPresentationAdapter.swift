@@ -3,7 +3,6 @@
 //
 
 import SecondtryEssential
-import SecondtryEssentialiOS
 
 final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
     

@@ -4,7 +4,6 @@
 
 import UIKit
 import SecondtryEssential
-import SecondtryEssentialiOS
 
 final class FeedViewAdapter: FeedView {
 	private weak var controller: MVPFeedViewController?
