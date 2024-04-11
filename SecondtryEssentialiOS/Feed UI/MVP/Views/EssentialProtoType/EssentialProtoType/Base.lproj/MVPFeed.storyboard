@@ -91,6 +91,9 @@ Location</string>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tsT-7G-iNQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="feed-image-view">
+                                                                <bool key="isElement" value="NO"/>
+                                                            </accessibility>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojQ-jM-69D">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
@@ -142,6 +145,9 @@ Location</string>
                                         <constraint firstItem="AIZ-ON-RY8" firstAttribute="top" secondItem="ZOf-kB-Mm6" secondAttribute="topMargin" priority="999" constant="6" id="zeV-IS-QiH"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="feed-image-cell">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="H63-o4-rxp" id="xHh-hV-Gvr"/>
                                     <outlet property="feedImageContainer" destination="FAU-iA-TTE" id="srA-f8-EJI"/>
@@ -158,6 +164,7 @@ Location</string>
                             <outlet property="prefetchDataSource" destination="1hh-nG-9OR" id="9XQ-fL-7iO"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="MoJ-w7-vBL"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yrT-VT-7jR" userLabel="Refresh Control">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -176,7 +183,7 @@ Location</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1105.7971014492755" y="-11.383928571428571"/>
+            <point key="canvasLocation" x="2926.0869565217395" y="-11.383928571428571"/>
         </scene>
     </scenes>
     <resources>
