@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SecondtryEssential
+import SecondtryEssentialiOS
 
 public final class MVPFeedUIComposer {
     private init() {}

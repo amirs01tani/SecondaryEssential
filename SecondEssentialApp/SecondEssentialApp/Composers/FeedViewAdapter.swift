@@ -4,6 +4,7 @@
 
 import UIKit
 import SecondtryEssential
+import SecondtryEssentialiOS
 
 final class FeedViewAdapter: FeedView {
 	private weak var controller: MVPFeedViewController?
@@ -15,7 +16,7 @@ final class FeedViewAdapter: FeedView {
 	}
 	
 	func display(_ viewModel: FeedViewModel) {
-		controller?.tableModel = viewModel.feed.map { model in
+        controller?.display(viewModel.feed.map { model in
 			let adapter = FeedImageDataLoaderPresentationAdapter<WeakRefVirtualProxy<MVPFeedImageCellController>, UIImage>(model: model, imageLoader: imageLoader)
 			let view = MVPFeedImageCellController(delegate: adapter)
 			
@@ -24,6 +25,6 @@ final class FeedViewAdapter: FeedView {
 				imageTransformer: UIImage.init)
 			
 			return view
-		}
+		})
 	}
 }

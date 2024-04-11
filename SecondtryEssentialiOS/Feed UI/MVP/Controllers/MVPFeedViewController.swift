@@ -9,15 +9,15 @@ import Foundation
 import UIKit
 import SecondtryEssential
 
-protocol FeedViewControllerDelegate {
+public protocol FeedViewControllerDelegate {
     func didRequestFeedRefresh()
 }
 
 public final class MVPFeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
-    var delegate: FeedViewControllerDelegate?
+    public var delegate: FeedViewControllerDelegate?
     @IBOutlet private(set) public var errorView: ErrorView?
 
-    var tableModel = [MVPFeedImageCellController]() {
+    public var tableModel = [MVPFeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
 
@@ -29,6 +29,10 @@ public final class MVPFeedViewController: UITableViewController, UITableViewData
     
     @IBAction private func refresh() {
         delegate?.didRequestFeedRefresh()
+    }
+    
+    public func display(_ cellControllers: [MVPFeedImageCellController]) {
+        tableModel = cellControllers
     }
     
     public func display(_ viewModel: FeedLoadingViewModel) {

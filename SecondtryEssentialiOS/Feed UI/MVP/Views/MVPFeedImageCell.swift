@@ -18,7 +18,6 @@ public final class MVPFeedImageCell: UITableViewCell {
     
     var onRetry: (() -> Void)?
     
-    
     @IBAction private func retryButtonTapped() {
         onRetry?()
     }
