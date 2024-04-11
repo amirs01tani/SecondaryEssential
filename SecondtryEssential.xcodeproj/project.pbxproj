@@ -78,6 +78,8 @@
 		2992E34C2BC84FE100F5F76A /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3462BC84FE100F5F76A /* MainQueueDispatchDecorator.swift */; };
 		2992E34D2BC84FE100F5F76A /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3472BC84FE100F5F76A /* WeakRefVirtualProxy.swift */; };
 		2992E34E2BC84FE100F5F76A /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3482BC84FE100F5F76A /* FeedLoaderPresentationAdapter.swift */; };
+		2992E3512BC85C0500F5F76A /* EMPTY_FEED.png in Resources */ = {isa = PBXBuildFile; fileRef = 2992E3502BC85C0500F5F76A /* EMPTY_FEED.png */; };
+		2992E3532BC85C3C00F5F76A /* FEED_WITH_CONTENT.png in Resources */ = {isa = PBXBuildFile; fileRef = 2992E3522BC85C3C00F5F76A /* FEED_WITH_CONTENT.png */; };
 		2995B1DC2B7A883A00596EED /* MVVMFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1CE2B7A875B00596EED /* MVVMFeedUIComposer.swift */; };
 		2995B1DD2B7A884000596EED /* MVVMFeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D52B7A875C00596EED /* MVVMFeedImageCell.swift */; };
 		2995B1DE2B7A884400596EED /* MVVMFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */; };
@@ -254,6 +256,8 @@
 		2992E3462BC84FE100F5F76A /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		2992E3472BC84FE100F5F76A /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
 		2992E3482BC84FE100F5F76A /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		2992E3502BC85C0500F5F76A /* EMPTY_FEED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EMPTY_FEED.png; sourceTree = "<group>"; };
+		2992E3522BC85C3C00F5F76A /* FEED_WITH_CONTENT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_CONTENT.png; sourceTree = "<group>"; };
 		2995B1CE2B7A875B00596EED /* MVVMFeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedUIComposer.swift; sourceTree = "<group>"; };
 		2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedViewController.swift; sourceTree = "<group>"; };
 		2995B1D12B7A875B00596EED /* MVVMFeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedRefreshViewController.swift; sourceTree = "<group>"; };
@@ -519,6 +523,16 @@
 			path = SecondEssentialApp/SecondEssentialApp/Composers;
 			sourceTree = SOURCE_ROOT;
 		};
+		2992E34F2BC85C0500F5F76A /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				2992E3502BC85C0500F5F76A /* EMPTY_FEED.png */,
+				2992E3522BC85C3C00F5F76A /* FEED_WITH_CONTENT.png */,
+			);
+			name = snapshots;
+			path = SecondtryEssentialiOSTests/snapshots;
+			sourceTree = SOURCE_ROOT;
+		};
 		2995B1CB2B7A872800596EED /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +734,7 @@
 			children = (
 				29F1434B2B791B8500FB6108 /* Helpers */,
 				29F1432D2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift */,
+				2992E34F2BC85C0500F5F76A /* snapshots */,
 			);
 			path = "Feed UI";
 			sourceTree = "<group>";
@@ -966,6 +981,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2992E3512BC85C0500F5F76A /* EMPTY_FEED.png in Resources */,
+				2992E3532BC85C3C00F5F76A /* FEED_WITH_CONTENT.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
