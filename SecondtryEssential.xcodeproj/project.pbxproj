@@ -78,9 +78,8 @@
 		2992E34C2BC84FE100F5F76A /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3462BC84FE100F5F76A /* MainQueueDispatchDecorator.swift */; };
 		2992E34D2BC84FE100F5F76A /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3472BC84FE100F5F76A /* WeakRefVirtualProxy.swift */; };
 		2992E34E2BC84FE100F5F76A /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3482BC84FE100F5F76A /* FeedLoaderPresentationAdapter.swift */; };
-		2992E3512BC85C0500F5F76A /* EMPTY_FEED.png in Resources */ = {isa = PBXBuildFile; fileRef = 2992E3502BC85C0500F5F76A /* EMPTY_FEED.png */; };
-		2992E3532BC85C3C00F5F76A /* FEED_WITH_CONTENT.png in Resources */ = {isa = PBXBuildFile; fileRef = 2992E3522BC85C3C00F5F76A /* FEED_WITH_CONTENT.png */; };
 		2992E3552BC85CC400F5F76A /* UITableView+HeaderResizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3542BC85CC400F5F76A /* UITableView+HeaderResizing.swift */; };
+		2992E3572BC8627300F5F76A /* UIViewController+SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3562BC8627300F5F76A /* UIViewController+SnapshotTests.swift */; };
 		2995B1DC2B7A883A00596EED /* MVVMFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1CE2B7A875B00596EED /* MVVMFeedUIComposer.swift */; };
 		2995B1DD2B7A884000596EED /* MVVMFeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D52B7A875C00596EED /* MVVMFeedImageCell.swift */; };
 		2995B1DE2B7A884400596EED /* MVVMFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */; };
@@ -257,9 +256,8 @@
 		2992E3462BC84FE100F5F76A /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		2992E3472BC84FE100F5F76A /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
 		2992E3482BC84FE100F5F76A /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
-		2992E3502BC85C0500F5F76A /* EMPTY_FEED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EMPTY_FEED.png; sourceTree = "<group>"; };
-		2992E3522BC85C3C00F5F76A /* FEED_WITH_CONTENT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_CONTENT.png; sourceTree = "<group>"; };
 		2992E3542BC85CC400F5F76A /* UITableView+HeaderResizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+HeaderResizing.swift"; sourceTree = "<group>"; };
+		2992E3562BC8627300F5F76A /* UIViewController+SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SnapshotTests.swift"; sourceTree = "<group>"; };
 		2995B1CE2B7A875B00596EED /* MVVMFeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedUIComposer.swift; sourceTree = "<group>"; };
 		2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedViewController.swift; sourceTree = "<group>"; };
 		2995B1D12B7A875B00596EED /* MVVMFeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedRefreshViewController.swift; sourceTree = "<group>"; };
@@ -529,8 +527,6 @@
 		2992E34F2BC85C0500F5F76A /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
-				2992E3502BC85C0500F5F76A /* EMPTY_FEED.png */,
-				2992E3522BC85C3C00F5F76A /* FEED_WITH_CONTENT.png */,
 			);
 			name = snapshots;
 			path = SecondtryEssentialiOSTests/snapshots;
@@ -674,6 +670,7 @@
 			children = (
 				29F143612B79221200FB6108 /* Feed UI */,
 				2992E3322BC8493B00F5F76A /* FeedSnapshotTest.swift */,
+				2992E3562BC8627300F5F76A /* UIViewController+SnapshotTests.swift */,
 			);
 			path = SecondtryEssentialiOSTests;
 			sourceTree = "<group>";
@@ -984,8 +981,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2992E3512BC85C0500F5F76A /* EMPTY_FEED.png in Resources */,
-				2992E3532BC85C3C00F5F76A /* FEED_WITH_CONTENT.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,6 +1118,7 @@
 				2992E33F2BC84EB700F5F76A /* FeedImageCell+TestHelpers.swift in Sources */,
 				2992E33C2BC84E6700F5F76A /* UIImage+TestHelpers.swift in Sources */,
 				29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */,
+				2992E3572BC8627300F5F76A /* UIViewController+SnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
