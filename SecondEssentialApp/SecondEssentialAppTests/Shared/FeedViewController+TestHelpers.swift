@@ -77,6 +77,9 @@ extension MVPFeedViewController {
     
     func feedImageView(at row: Int) -> UITableViewCell? {
         let ds = tableView.dataSource
+        guard numberOfRenderedFeedImageViews() > row else {
+            return nil
+        }
         let index = IndexPath(row: row, section: feedImagesSection)
         return ds?.tableView(tableView, cellForRowAt: index)
     }

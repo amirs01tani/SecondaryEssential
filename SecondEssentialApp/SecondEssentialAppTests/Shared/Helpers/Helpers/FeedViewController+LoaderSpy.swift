@@ -11,23 +11,23 @@ import SecondtryEssentialiOS
 
 class LoaderSpy: FeedLoader, FeedImageDataLoader {
     
-    private var feedRequesrs = [(FeedLoader.Result) -> Void]()
+    private var feedRequests = [(FeedLoader.Result) -> Void]()
     
     var loadFeedCallCount: Int {
-        return feedRequesrs.count
+        return feedRequests.count
     }
     
     func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        feedRequesrs.append(completion)
+        feedRequests.append(completion)
     }
     
     func completeFeedLoading(with feed: [FeedImage] = [], at index: Int = 0) {
-        feedRequesrs[index](.success(feed))
+        feedRequests[index](.success(feed))
     }
     
     func completeFeedLoadingWithError(at index: Int = 0) {
         let error = NSError(domain: "an error", code: 0)
-        feedRequesrs[index](.failure(error))
+        feedRequests[index](.failure(error))
     }
     
     // MARK: - FeedImageDataLoader

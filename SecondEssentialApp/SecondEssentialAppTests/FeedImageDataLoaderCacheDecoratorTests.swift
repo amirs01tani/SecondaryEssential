@@ -14,7 +14,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
     func test_init_doesNotLoadImageData() {
         let (_, loader) = makeSUT()
 
-        XCTAssertTrue(loader.loadedURLs.isEmpty, "Expected no loaded URLs")
+        XCTAssertTrue(loader.loadedImageURLs.isEmpty, "Expected no loaded URLs")
     }
 
     func test_loadImageData_loadsFromLoader() {
@@ -23,7 +23,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
 
         _ = sut.loadImageData(from: url) { _ in }
 
-        XCTAssertEqual(loader.loadedURLs, [url], "Expected to load URL from loader")
+        XCTAssertEqual(loader.loadedImageURLs, [url], "Expected to load URL from loader")
     }
 
     func test_cancelLoadImageData_cancelsLoaderTask() {
@@ -33,7 +33,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
         let task = sut.loadImageData(from: url) { _ in }
         task.cancel()
 
-        XCTAssertEqual(loader.cancelledURLs, [url], "Expected to cancel URL loading from loader")
+        XCTAssertEqual(loader.cancelledImageURLs, [url], "Expected to cancel URL loading from loader")
     }
 
     func test_loadImageData_deliversDataOnLoaderSuccess() {
@@ -41,7 +41,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
         let (sut, loader) = makeSUT()
 
         expect(sut, toCompleteWith: .success(imageData), when: {
-            loader.complete(with: imageData)
+            loader.completeImageLoading(with: imageData)
         })
     }
 
@@ -49,7 +49,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
         let (sut, loader) = makeSUT()
 
         expect(sut, toCompleteWith: .failure(anyNSError()), when: {
-            loader.complete(with: anyNSError())
+            loader.completeImageLoadingWithError()
         })
     }
     
@@ -60,7 +60,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
         let (sut, loader) = makeSUT(cache: cache)
         
         _ = sut.loadImageData(from: url) { _ in }
-        loader.complete(with: imageData)
+        loader.completeImageLoading(with: imageData)
         
         XCTAssertEqual(cache.messages, [.save(data: imageData, for: url)], "Expected to cache loaded image data on success")
     }
@@ -71,7 +71,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
         let (sut, loader) = makeSUT(cache: cache)
         
         _ = sut.loadImageData(from: url) { _ in }
-        loader.complete(with: anyNSError())
+        loader.completeImageLoadingWithError()
         
         XCTAssertTrue(cache.messages.isEmpty, "Expected to cache loaded image data on success")
     }

@@ -3,6 +3,7 @@
 //
 
 import SecondtryEssential
+import SecondtryEssentialiOS
 
 final class FeedImageDataLoaderPresentationAdapter<View: FeedImageView, Image>: FeedImageCellControllerDelegate where View.Image == Image {
 	private let model: FeedImage

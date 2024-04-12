@@ -13,25 +13,27 @@ import SecondtryEssentialiOS
 class FeedAcceptanceTests: XCTestCase {
 
     func test_onLaunch_displaysRemoteFeedWhenCustomerHasConnectivity() {
-        let feed = launch(httpClient: .online(response), store: .empty)
-
-        XCTAssertEqual(feed.numberOfRenderedFeedImageViews(), 2)
-        XCTAssertEqual(feed.renderedFeedImageData(at: 0), makeImageData())
-        XCTAssertEqual(feed.renderedFeedImageData(at: 1), makeImageData())
-    }
-
-    func test_onLaunch_displaysCachedRemoteFeedWhenCustomerHasNoConnectivity() {
-        let sharedStore = InMemoryFeedStore.empty
-        let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
-        onlineFeed.simulateFeedImageViewVisible(at: 0)
-        onlineFeed.simulateFeedImageViewVisible(at: 1)
+            let feed = launch(httpClient: .online(response), store: .empty)
+            
+            XCTAssertEqual(feed.numberOfRenderedFeedImageViews(), 2)
+            XCTAssertEqual(feed.renderedFeedImageData(at: 0), makeImageData())
+            XCTAssertEqual(feed.renderedFeedImageData(at: 1), makeImageData())
+            
+        }
         
-        let offlineFeed = launch(httpClient: .offline, store: sharedStore)
-        
-        XCTAssertEqual(offlineFeed.numberOfRenderedFeedImageViews(), 2)
-        XCTAssertEqual(offlineFeed.renderedFeedImageData(at: 0), makeImageData())
-        XCTAssertEqual(offlineFeed.renderedFeedImageData(at: 1), makeImageData())
-    }
+        func test_onLaunch_displaysCachedRemoteFeedWhenCustomerHasNoConnectivity() {
+            let sharedStore = InMemoryFeedStore.empty
+            
+            let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
+            onlineFeed.simulateFeedImageViewVisible(at: 0)
+            onlineFeed.simulateFeedImageViewVisible(at: 1)
+            
+            let offlineFeed = launch(httpClient: .offline, store: sharedStore)
+            
+            XCTAssertEqual(offlineFeed.numberOfRenderedFeedImageViews(), 2)
+            XCTAssertEqual(offlineFeed.renderedFeedImageData(at: 0), makeImageData())
+            XCTAssertEqual(offlineFeed.renderedFeedImageData(at: 1), makeImageData())
+        }
 
     func test_onLaunch_displaysEmptyFeedWhenCustomerHasNoConnectivityAndNoCache() {
         let feed = launch(httpClient: .offline, store: .empty)
@@ -56,8 +58,7 @@ class FeedAcceptanceTests: XCTestCase {
     }
 
 
-    // MARK: - Helpers
-
+// MARK: - Helpers
     private func launch(
         httpClient: HTTPClientStub = .offline,
         store: InMemoryFeedStore = .empty
@@ -67,7 +68,9 @@ class FeedAcceptanceTests: XCTestCase {
         sut.configureWindow()
 
         let nav = sut.window?.rootViewController as? UINavigationController
-        return nav?.topViewController as! MVPFeedViewController
+        let vc = nav?.topViewController as! MVPFeedViewController
+        vc.simulateAppearance()
+        return vc
     }
     
     private func enterBackground(with store: InMemoryFeedStore) {

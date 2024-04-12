@@ -8,6 +8,7 @@
 import XCTest
 import SecondtryEssential
 import SecondtryEssentialiOS
+@testable import SecondEssentialApp
 
 final class FeedViewControllerTests: XCTestCase {
     
