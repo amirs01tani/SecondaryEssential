@@ -14,12 +14,15 @@ public protocol FeedViewControllerDelegate {
 }
 
 public final class MVPFeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
-    public var delegate: FeedViewControllerDelegate?
+    
     @IBOutlet private(set) public var errorView: ErrorView?
+    
     private var onViewIsAppearing: ((MVPFeedViewController) -> Void)?
+    private var loadingControllers = [IndexPath: MVPFeedImageCellController]()
     public var tableModel = [MVPFeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
+    public var delegate: FeedViewControllerDelegate?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +35,11 @@ public final class MVPFeedViewController: UITableViewController, UITableViewData
     
     public override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
-        
         onViewIsAppearing?(self)
     }
     
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         tableView.sizeTableHeaderToFit()
     }
     
@@ -47,6 +48,7 @@ public final class MVPFeedViewController: UITableViewController, UITableViewData
     }
     
     public func display(_ cellControllers: [MVPFeedImageCellController]) {
+        loadingControllers = [:]
         tableModel = cellControllers
     }
     
@@ -81,10 +83,13 @@ public final class MVPFeedViewController: UITableViewController, UITableViewData
     }
     
     private func cellController(forRowAt indexPath: IndexPath) -> MVPFeedImageCellController {
-        return tableModel[indexPath.row]
+        let controller = tableModel[indexPath.row]
+        loadingControllers[indexPath] = controller
+        return controller
     }
     
     private func cancelCellControllerLoad(forRowAt indexPath: IndexPath) {
-        cellController(forRowAt: indexPath).cancelLoad()
+        loadingControllers[indexPath]?.cancelLoad()
+        loadingControllers[indexPath] = nil
     }
 }

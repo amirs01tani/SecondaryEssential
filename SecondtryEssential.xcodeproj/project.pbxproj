@@ -81,6 +81,7 @@
 		2992E3552BC85CC400F5F76A /* UITableView+HeaderResizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3542BC85CC400F5F76A /* UITableView+HeaderResizing.swift */; };
 		2992E3572BC8627300F5F76A /* UIViewController+SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3562BC8627300F5F76A /* UIViewController+SnapshotTests.swift */; };
 		2992E3592BC862D100F5F76A /* XCTestCase+SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3582BC862D100F5F76A /* XCTestCase+SnapshotTests.swift */; };
+		2992E35B2BC978E600F5F76A /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E35A2BC978E600F5F76A /* UIView+TestHelpers.swift */; };
 		2995B1DC2B7A883A00596EED /* MVVMFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1CE2B7A875B00596EED /* MVVMFeedUIComposer.swift */; };
 		2995B1DD2B7A884000596EED /* MVVMFeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D52B7A875C00596EED /* MVVMFeedImageCell.swift */; };
 		2995B1DE2B7A884400596EED /* MVVMFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */; };
@@ -260,6 +261,7 @@
 		2992E3542BC85CC400F5F76A /* UITableView+HeaderResizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+HeaderResizing.swift"; sourceTree = "<group>"; };
 		2992E3562BC8627300F5F76A /* UIViewController+SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SnapshotTests.swift"; sourceTree = "<group>"; };
 		2992E3582BC862D100F5F76A /* XCTestCase+SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+SnapshotTests.swift"; sourceTree = "<group>"; };
+		2992E35A2BC978E600F5F76A /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
 		2995B1CE2B7A875B00596EED /* MVVMFeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedUIComposer.swift; sourceTree = "<group>"; };
 		2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedViewController.swift; sourceTree = "<group>"; };
 		2995B1D12B7A875B00596EED /* MVVMFeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMFeedRefreshViewController.swift; sourceTree = "<group>"; };
@@ -697,6 +699,7 @@
 				29F1435C2B791FDE00FB6108 /* FeedViewController+LoaderSpy.swift */,
 				29F1435E2B79206300FB6108 /* FeedViewControllerTests+Assertion.swift */,
 				29F143582B791EE700FB6108 /* FakeRefreshController.swift */,
+				2992E35A2BC978E600F5F76A /* UIView+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1122,6 +1125,7 @@
 				2992E3592BC862D100F5F76A /* XCTestCase+SnapshotTests.swift in Sources */,
 				2992E33C2BC84E6700F5F76A /* UIImage+TestHelpers.swift in Sources */,
 				29F1432E2B755E3300FB6108 /* SecondtryEssentialiOSTests.swift in Sources */,
+				2992E35B2BC978E600F5F76A /* UIView+TestHelpers.swift in Sources */,
 				2992E3572BC8627300F5F76A /* UIViewController+SnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
