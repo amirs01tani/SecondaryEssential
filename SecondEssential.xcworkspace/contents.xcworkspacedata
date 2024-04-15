@@ -13,4 +13,7 @@
    <FileRef
       location = "group:SecondtryEssentialiOSTests/FeedSnapshotTest.xctestplan">
    </FileRef>
+   <FileRef
+      location = "group:../SecondtryEssentialFeedCacheIntegrationTests.xctestplan">
+   </FileRef>
 </Workspace>

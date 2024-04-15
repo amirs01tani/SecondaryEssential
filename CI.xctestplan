@@ -33,6 +33,20 @@
         "identifier" : "29721A112B6C1F4A002576A3",
         "name" : "SecondtryEssentialFeedCacheIntegrationTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SecondEssentialApp\/SecondEssentialApp.xcodeproj",
+        "identifier" : "298BF4402BB9A8EF00AAE805",
+        "name" : "SecondEssentialAppTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SecondtryEssential.xcodeproj",
+        "identifier" : "29F143272B755E3300FB6108",
+        "name" : "SecondtryEssentialiOSTests"
+      }
     }
   ],
   "version" : 1

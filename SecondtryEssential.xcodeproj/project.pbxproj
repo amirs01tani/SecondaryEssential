@@ -26,7 +26,6 @@
 		29721A0A2B6C1C18002576A3 /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29721A092B6C1C18002576A3 /* ManagedFeedImage.swift */; };
 		29721A0D2B6C1D1A002576A3 /* CoreData+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29721A0C2B6C1D1A002576A3 /* CoreData+Helpers.swift */; };
 		29721A152B6C1F4A002576A3 /* SecondtryEssentialFeedCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29721A142B6C1F4A002576A3 /* SecondtryEssentialFeedCacheIntegrationTests.swift */; };
-		29721A162B6C1F4A002576A3 /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; platformFilters = (macos, ); };
 		29721A1C2B6C1FEA002576A3 /* MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2968E5782B1A8704008E44AC /* MemoryLeakTracker.swift */; };
 		29721A202B6C2852002576A3 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29710DAA2B3ED68D0033394D /* TestHelpers.swift */; };
 		297A92FD2B64557B00665884 /* XCTestCase+FeedStoreTestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A92FC2B64557B00665884 /* XCTestCase+FeedStoreTestSpec.swift */; };
@@ -70,6 +69,7 @@
 		2992E3572BC8627300F5F76A /* UIViewController+SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3562BC8627300F5F76A /* UIViewController+SnapshotTests.swift */; };
 		2992E3592BC862D100F5F76A /* XCTestCase+SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E3582BC862D100F5F76A /* XCTestCase+SnapshotTests.swift */; };
 		2992E37E2BC9B88000F5F76A /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2992E37D2BC9B88000F5F76A /* UIImage+TestHelpers.swift */; };
+		2992E3842BC9CD8100F5F76A /* SecondtryEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C14E922AF3926A00470C52 /* SecondtryEssential.framework */; };
 		2995B1DC2B7A883A00596EED /* MVVMFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1CE2B7A875B00596EED /* MVVMFeedUIComposer.swift */; };
 		2995B1DD2B7A884000596EED /* MVVMFeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D52B7A875C00596EED /* MVVMFeedImageCell.swift */; };
 		2995B1DE2B7A884400596EED /* MVVMFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995B1D02B7A875B00596EED /* MVVMFeedViewController.swift */; };
@@ -110,7 +110,7 @@
 			remoteGlobalIDString = 29C14E912AF3926A00470C52;
 			remoteInfo = SecondtryEssential;
 		};
-		29721A172B6C1F4A002576A3 /* PBXContainerItemProxy */ = {
+		2992E3862BC9CD8100F5F76A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29C14E892AF3926A00470C52 /* Project object */;
 			proxyType = 1;
@@ -279,7 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29721A162B6C1F4A002576A3 /* SecondtryEssential.framework in Frameworks */,
+				2992E3842BC9CD8100F5F76A /* SecondtryEssential.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,7 +737,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				29721A182B6C1F4A002576A3 /* PBXTargetDependency */,
+				2992E3872BC9CD8100F5F76A /* PBXTargetDependency */,
 			);
 			name = SecondtryEssentialFeedCacheIntegrationTests;
 			productName = SecondtryEssentialFeedCacheIntegrationTests;
@@ -1057,13 +1057,10 @@
 			target = 29C14E912AF3926A00470C52 /* SecondtryEssential */;
 			targetProxy = 293A61462B2773EC00EF0B5B /* PBXContainerItemProxy */;
 		};
-		29721A182B6C1F4A002576A3 /* PBXTargetDependency */ = {
+		2992E3872BC9CD8100F5F76A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilters = (
-				macos,
-			);
 			target = 29C14E912AF3926A00470C52 /* SecondtryEssential */;
-			targetProxy = 29721A172B6C1F4A002576A3 /* PBXContainerItemProxy */;
+			targetProxy = 2992E3862BC9CD8100F5F76A /* PBXContainerItemProxy */;
 		};
 		29CAE7012AF3A50C0015AA80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1159,15 +1156,15 @@
 				DEVELOPMENT_TEAM = E78623RKW6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.secondtry.SecondtryEssentialFeedCacheIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1179,15 +1176,15 @@
 				DEVELOPMENT_TEAM = E78623RKW6;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.secondtry.SecondtryEssentialFeedCacheIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
