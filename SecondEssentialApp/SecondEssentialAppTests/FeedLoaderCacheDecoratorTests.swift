@@ -3,7 +3,7 @@
 //  SecondEssentialAppTests
 //
 //  Created by Amir on 4/2/24.
-//
+//  redundant while using combine
 
 import XCTest
 import SecondtryEssential
