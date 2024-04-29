@@ -23,7 +23,7 @@ class SceneDelegateTests: XCTestCase {
     
     func test_sceneWillConnectToSession_configuresRootViewController() {
         let sut = SceneDelegate()
-        sut.window = UIWindow()
+        sut.window = UIWindowSpy()
 
         sut.configureWindow()
 
@@ -33,6 +33,14 @@ class SceneDelegateTests: XCTestCase {
 
         XCTAssertNotNil(rootNavigation, "Expected a navigation controller as root, got \(String(describing: root)) instead")
         XCTAssertTrue(topController is MVPFeedViewController, "Expected a feed controller as top view controller, got \(String(describing: topController)) instead")
+    }
+    
+    private class UIWindowSpy: UIWindow {
+        var makeKeyAndVisibleCallCount = 0
+        
+        override func makeKeyAndVisible() {
+            makeKeyAndVisibleCallCount += 1
+        }
     }
 
 }
