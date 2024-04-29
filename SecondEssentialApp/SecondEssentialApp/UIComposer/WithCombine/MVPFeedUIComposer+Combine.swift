@@ -16,7 +16,7 @@ public final class MVPFeedUIComposerWithCombine {
 
     public static func feedComposedWith(feedLoader: @escaping () -> FeedLoader.Publisher, imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher) -> MVPFeedViewController {
             let presentationAdapter = FeedLoaderPresentationAdapterWithCombine(
-                feedLoader: { feedLoader().dispatchOnMainQueue() })
+                feedLoader: { feedLoader() })
         
         let feedController = makeFeedViewController(
             delegate: presentationAdapter,
@@ -25,7 +25,7 @@ public final class MVPFeedUIComposerWithCombine {
         presentationAdapter.presenter = MVPFeedPresenter(
             feedView: FeedViewAdapterWithCombine(
                 controller: feedController,
-                imageLoader: { imageLoader($0).dispatchOnMainQueue() }),
+                imageLoader: imageLoader ),
             loadingView: WeakRefVirtualProxy(feedController),
             errorView: WeakRefVirtualProxy(feedController))
         
