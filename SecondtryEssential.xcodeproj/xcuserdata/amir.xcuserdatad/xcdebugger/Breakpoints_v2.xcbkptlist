@@ -50,38 +50,6 @@
             endingLineNumber = "42"
             landmarkName = "test_init_doesNotRequestDataFromURL()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CA70AD20-4889-4228-8A90-E60153779B8C - 8d5dbe83148860dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SecondtryEssentialTests.FeedItemLoaderTests.test_init_doesNotRequestDataFromURL() -&gt; ()"
-                  moduleName = "SecondtryEssentialTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amir/Documents/SecondtryEssential/SecondtryEssentialTests/FeedItemLoaderTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "264">
-               </Location>
-               <Location
-                  uuid = "CA70AD20-4889-4228-8A90-E60153779B8C - 8d5dbe83148860dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SecondtryEssentialTests.FeedItemLoaderTests.test_init_doesNotRequestDataFromURL() -&gt; ()"
-                  moduleName = "SecondtryEssentialTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/amir/Documents/SecondtryEssential/SecondtryEssentialTests/FeedItemLoaderTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "224">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

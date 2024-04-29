@@ -3,7 +3,7 @@
 //  SecondEssentialApp
 //
 //  Created by Amir on 4/2/24.
-//
+//  redundant while using Combine
 
 import Foundation
 import SecondtryEssential

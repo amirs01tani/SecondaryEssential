@@ -14,7 +14,7 @@ import Combine
 public final class MVPFeedUIComposerWithCombine {
     private init() {}
 
-    public static func feedComposedWith(feedLoader: @escaping () -> FeedLoader.Publisher, imageLoader: FeedImageDataLoader) -> MVPFeedViewController {
+    public static func feedComposedWith(feedLoader: @escaping () -> FeedLoader.Publisher, imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher) -> MVPFeedViewController {
             let presentationAdapter = FeedLoaderPresentationAdapterWithCombine(
                 feedLoader: { feedLoader().dispatchOnMainQueue() })
         
@@ -23,9 +23,9 @@ public final class MVPFeedUIComposerWithCombine {
             title: MVPFeedPresenter.title)
         
         presentationAdapter.presenter = MVPFeedPresenter(
-            feedView: FeedViewAdapter(
+            feedView: FeedViewAdapterWithCombine(
                 controller: feedController,
-                imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader)),
+                imageLoader: { imageLoader($0).dispatchOnMainQueue() }),
             loadingView: WeakRefVirtualProxy(feedController),
             errorView: WeakRefVirtualProxy(feedController))
         

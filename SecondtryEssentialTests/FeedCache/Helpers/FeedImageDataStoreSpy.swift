@@ -1,6 +1,6 @@
 //
 //  Copyright © 2019 Essential Developer. All rights reserved.
-//
+//  redundant while using Combine
 
 import Foundation
 import SecondtryEssential
